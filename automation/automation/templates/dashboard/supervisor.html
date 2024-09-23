@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% load i18n  %}
+{% block content %}   
+ <div class="w3-flex-container-center">
+    <div class="w3-card w3-border w3-dark-light w3-round-xlarge" style="margin: 2em auto; width:50%">
+        <header class="w3-padding w3-center"><h3>{% trans 'Cameras maintenance' %}</h3></header>
+        <hr>
+        {% if request.user.is_superuser %}
+        {% for device in devices %}
+        <div class="w3-cell-row w3-padding">
+            <div class="w3-cell w3-cell-top w3-mobile">
+                <a href="{% url 'supervisor' pid=device.id %}" class="w3-button w3-block w3-left-align">
+                    <img src="{{ device.image.url }}" style="height:32px">&nbsp;{{ device.name }}&nbsp;<span class="w3-small">[ {{ device.location.name }} ]</span><br>
+                    <span class="w3-margin-left-6 w3-small">{{ device.ip }}</span>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+        <br>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}   
+

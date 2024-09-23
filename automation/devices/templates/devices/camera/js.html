@@ -1,0 +1,66 @@
+
+<script>
+    function video_payload(uuid) {
+        return {
+            record: $("#record-" + uuid).val(),
+            fps: $("#fps-" + uuid).val(),
+            zoom: $("#zoom-" + uuid).val(),
+            rotate: $("#rotate-" + uuid).val(),
+            contour: $("#contour-" + uuid).val(),
+            mobile: $("#mobile-" + uuid).val(),
+            mqtt: $("#mqtt-" + uuid).val(),
+        };
+    }
+    
+    function video_save_params(uuid) {;
+        sendMqttMessage(uuid, '/set/save', video_payload(uuid));
+    }
+    
+    function video_controller(id) {
+        sendMqttMessage(uuidFromBtn(id), '/set/toggle', {});
+    }
+    
+    function video_display_params(args, payload) {     
+        $("select#record-" + args.uuid).val(payload.record);
+        $("input#fps-" + args.uuid).val(payload.fps);
+        $("input#zoom-" + args.uuid).val(payload.zoom);
+        $("input#rotate-" + args.uuid).val(payload.rotate);
+        $("select#contour-" + args.uuid).val(payload.contour);
+        $("input#mobile-" + args.uuid).val(payload.mobile);
+        $("select#mqtt-" + args.uuid).val(payload.mqtt);
+        setBtnPlayPause(payload.state, args.uuid);
+    }
+
+    function cameraControl(mqtt, args, payload) {
+        if (args.evt=="jpg") {
+            $("img.jpeg-"+args.uuid).attr('src', 'data:image/jpeg;base64,' + bytesToBase64(payload));
+            $("span.fps-"+args.uuid).text(args.fps);
+            $("span.count-"+args.uuid).text(args.counter);
+            $("span.ts-"+args.uuid).text(to_localeDate(args.ts));
+            var lat = "";
+            var lon = "";
+            if (args.lat != 'NaN' && args.lon != 'NaN') {
+	            lat = toFloat(args.lat, 6)/1000000;
+	            lon = toFloat(args.lon, 6)/1000000;
+	            if (typeof mobile_map!=='undefined' && mobile_map) 
+	               addTag(args.uuid, lat, lon);
+            } 
+            $("span.lat-"+args.uuid).text(lat);
+            $("span.lon-"+args.uuid).text(lon);
+            return;
+        } else if (args.evt=="report") {
+            var opts = JSON.parse(payload.options);
+            $.extend(payload, opts);
+            cssClassToggle($("span.record-"+args.uuid), payload.record>0, 'w3-text-green', 'w3-text-pink');
+            if (payload.sleeping == true) {
+                sendMqttMessage(args.uuid, '/set/play', {});
+            }
+            video_display_params(args, payload);        
+        } else if (args.evt=="ping") {
+            var opts = JSON.parse(payload.options);
+            $.extend(payload, opts);
+            sendMqttMessage(args.uuid, '/pong', {ts: tsMsNow() });
+            video_display_params(args, payload);
+        }
+    }
+</script>

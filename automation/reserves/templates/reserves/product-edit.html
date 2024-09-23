@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags i18n %}
+
+{% block content %}
+<form action="" method="post" class=" w3-border w3-w75" style="margin: 5em auto">
+    {% csrf_token %}
+    <h3 class="w3-padding" style="color:{{ stock.product.color }}">{{ stock.product }}</h3>
+    <div class="w3-cell-row">
+    
+        <div class="w3-cell w3-padding">
+            <div class="w3-cell-row">
+                <div class="w3-cell">{{ form.range|as_crispy_field }}<br>{{ form.amount|as_crispy_field }}</div>
+                <div class="w3-cell">{{ form.created|as_crispy_field }}<br>{{ form.expiry_date_days|as_crispy_field }}</div>
+            </div>   
+        </div>
+        <div class="w3-cell w3-w30">{{ form.location|as_crispy_field }}</div>
+        <div class="w3-cell w3-w25">{{ form.packaging|as_crispy_field }}</div>
+    </div>
+    <div class="w3-cell-row">
+        <div class="w3-cell w3-padding">
+            <button type="submit" class="w3-button w3-xlarge w3-transparent w3-margin-top-2 w3-border w3-block">
+                <i class="fa-solid fa-pen w3-text-blue"></i> {% trans 'Update' %}
+            </button>        
+        </div>
+        <div class="w3-cell w3-padding">
+            <a href="{% url 'reserves:stock_list' %}" class="w3-button w3-xlarge w3-transparent w3-margin-top-2 w3-border w3-block">
+                <i class="fa-solid fa-circle-right w3-text-green"></i> {% trans 'Stocks' %}
+            </a>         
+        </div>    
+    </div>
+</form>
+{% endblock %}
+

@@ -1,0 +1,39 @@
+{% extends 'board.html' %}
+{% load i18n boardtags%}
+{% block menubar %}{% endblock %}
+
+{% block content %}
+<div class="w3-flex-container-center">
+	<div class="w3-card w3-border w3-dark-light w3-round-xlarge" style="margin: 2em auto; width:80%">
+	    <header class="w3-padding w3-center"><h3>{{ panel.label }}</h3></header>
+	    <hr>
+	    {% if request.user.is_superuser %}
+	    <div class="w3-cell-row">
+	       <div class="w3-cell w3-cell-top w3-mobile" style="width:250px">
+            <a href="/board/admin/" class="w3-bar-item w3-button"><i class="fas fa-database w3-text-red fa-2x w3-padding"></i> {% trans 'Admin' %}</a>
+            <a href="/board/location/" class="w3-bar-item w3-button"><i class="fa-solid fa-location-pin w3-text-cyan fa-2x w3-padding"></i> {% trans 'Locations' %}</a>
+            <a href="/board/machine/" class="w3-bar-item w3-button"><i class="fas fa-microchip w3-text-green fa-2x w3-padding"></i> {% trans 'Devices' %}</a>      
+            <a href="/board/sensorgroup/" class="w3-bar-item w3-button"><i class="fa-regular fa-object-group w3-text-green fa-2x w3-padding"></i> {% trans 'Sensors group' %}</a>        
+            <a href="/board/navpane/" class="w3-bar-item w3-button"><i class="fa-solid fa-table-columns w3-text-lime fa-2x w3-padding"></i> {% trans 'Navigation pane' %}</a>
+            <a href="/board/product/" class="w3-bar-item w3-button"><i class="fa-solid fa-carrot w3-text-orange fa-2x w3-padding"></i> {% trans 'Products' %}</a>
+	       </div>
+           <div class="w3-cell w3-cell-top w3-mobile" style="width:250px">
+            <a href="/board/user/" class="w3-bar-item w3-button"><i class="fa-solid fa-user-gear w3-text-teal fa-2x w3-padding"></i> {% trans 'Users' %}</a>
+            <a href="/board/periodictask/" class="w3-bar-item w3-button"><i class="fa-solid fa-clock w3-text-blue fa-2x w3-padding"></i> {% trans 'Periodic task' %}</a>          
+            <a href="/board/deviceprocessing/" class="w3-bar-item w3-button"><i class="fa-solid fa-gear w3-text-blue fa-2x w3-padding"></i> {% trans 'Processes' %}</a>          
+            <a href="/board/maintenance" class="w3-bar-item w3-button"><i class="fa-solid fa-screwdriver-wrench w3-text-orange fa-2x w3-padding"></i> {% trans 'Site maintenance' %}</a>
+            <a href="/board/supervisor" class="w3-bar-item w3-button"><i class="fa-solid fa-server w3-text-red fa-2x w3-padding"></i> {% trans 'Cameras maintenance' %}</a>
+            <a href="/board/stock/" class="w3-bar-item w3-button"><i class="fa-solid fa-store w3-text-cyan fa-2x w3-padding"></i> {% trans 'Stocks' %}</a>
+           </div>
+	    </div>
+        {% endif %}
+        <hr>
+        <footer class="w3-center">
+            <form action="{% url 'board_logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="w3-bar-item w3-button w3-margin w3-xlarge"><i class="fas fa-sign-out-alt w3-text-red"></i> {% trans 'Logout' %}</button>
+            </form>
+        </footer>
+	</div>
+</div>
+{% endblock %}

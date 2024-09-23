@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="w3-card w3-dark-light w3-padding" style="width: 100%">
+        {% for log in logs %}
+        <span class="w3-small">{{ log|truncatechars:160  }}</span><br>
+        {% endfor %}
+    </div>
+{% endblock %}

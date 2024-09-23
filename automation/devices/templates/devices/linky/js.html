@@ -1,0 +1,12 @@
+<script>
+	function linkyControl(mqtt, args, p) {
+	    $("span.ID").text(args.uuid);
+	    $("span.ts-" + args.uuid).text(to_localeDateMillisecond(p.time));
+	    $("span.HCHC").text( (parseInt(lztrim(p.HCHC, ''))/1000).toFixed(3));
+	    $("span.HCHP").text( (parseInt(lztrim(p.HCHP, ''))/1000).toFixed(3));
+	    $("span.PAPP").text( (parseInt(lztrim(p.PAPP, ''))) );
+	    $("span.IINST").text( lztrim(p.IINST, ''));
+	    $("span.PTEC").text( p.PTEC );
+	}
+</script>
+

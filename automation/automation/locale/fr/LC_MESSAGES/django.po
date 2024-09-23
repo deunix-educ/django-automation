@@ -1,0 +1,586 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-13 09:13+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: automation/admin.py:39 automation/models.py:24
+msgid "Template pathname"
+msgstr "Nom du chemin des fichiers gabarit"
+
+#: automation/apps.py:6
+msgid "Automation"
+msgstr "Automation"
+
+#: automation/forms.py:7
+msgid "All"
+msgstr "Tout"
+
+#: automation/forms.py:10
+msgid "Today"
+msgstr "Aujourd'hui"
+
+#: automation/forms.py:11
+msgid "Past 2 days"
+msgstr "Depuis 2 jours"
+
+#: automation/forms.py:12
+msgid "Past 3 days"
+msgstr "Depuis 3 jours"
+
+#: automation/forms.py:13
+msgid "Past 4 days"
+msgstr "Depuis 4 jours"
+
+#: automation/forms.py:14
+msgid "Past 5 days"
+msgstr "Depuis 5 jours"
+
+#: automation/forms.py:15
+msgid "Past 6 days"
+msgstr "Depuis 6 jours"
+
+#: automation/forms.py:16
+msgid "Last 7 days"
+msgstr "Depuis 7 jours"
+
+#: automation/forms.py:17
+msgid "Past 8 days"
+msgstr "Depuis 8 jours"
+
+#: automation/forms.py:18
+msgid "Past 9 days"
+msgstr "Depuis 9 jours"
+
+#: automation/forms.py:19
+msgid "Past 10 days"
+msgstr "Depuis 10 jours"
+
+#: automation/forms.py:20
+msgid "Last 15 days"
+msgstr "Depuis 15 jours"
+
+#: automation/forms.py:21
+msgid "From 1 month"
+msgstr "Depuis 1 mois"
+
+#: automation/forms.py:22
+msgid "From 3 months"
+msgstr "Depuis 1 mois"
+
+#: automation/forms.py:23
+msgid "From 6 months"
+msgstr "Depuis 6 mois"
+
+#: automation/forms.py:24
+msgid "From 1 year"
+msgstr "Depuis 1 an"
+
+#: automation/models.py:15
+msgid "New window"
+msgstr "Nouvelle fenêtre"
+
+#: automation/models.py:16
+msgid "Same frame"
+msgstr "Même cadre"
+
+#: automation/models.py:17
+msgid "Parent frame"
+msgstr "Cadre parent"
+
+#: automation/models.py:18
+msgid "Full body"
+msgstr "Tout le corps"
+
+#: automation/models.py:23 automation/models.py:111 automation/models.py:151
+msgid "Name"
+msgstr "Nom"
+
+#: automation/models.py:23
+msgid "Django: name of application installed"
+msgstr "Django: nom de l'application installée"
+
+#: automation/models.py:24
+msgid "Template pathname or app_name from url.py"
+msgstr "Nom du chemin de fichier des templates ou app_name de url.py"
+
+#: automation/models.py:25
+msgid "Is registered"
+msgstr "Est enregistré"
+
+#: automation/models.py:25
+msgid "Django: app_name is registerd in url.py"
+msgstr "Django: app_name est enregistrée dans url.py"
+
+#: automation/models.py:29
+msgid "Django application"
+msgstr "Application Django"
+
+#: automation/models.py:30
+msgid "Django Applications"
+msgstr "Applications Django"
+
+#: automation/models.py:46
+msgid "Icon name"
+msgstr "Nom icon"
+
+#: automation/models.py:47 automation/models.py:51
+msgid "Icon Awesome or img"
+msgstr "Icon Awesome ou img"
+
+#: automation/models.py:47
+msgid "Free font Awesome or img html representation"
+msgstr "Représentation html des Icons Awesome libre ou img"
+
+#: automation/models.py:52
+msgid "Icons Awesome or img"
+msgstr "Icon Awesome ou img"
+
+#: automation/models.py:59 automation/models.py:66 automation/models.py:175
+msgid "Sensor group"
+msgstr "Groupe de capteur"
+
+#: automation/models.py:59
+msgid "Max 32 chars long"
+msgstr "Maxi 32 caractères de long"
+
+#: automation/models.py:60 automation/models.py:112 automation/models.py:152
+msgid "Short description"
+msgstr "Description courte"
+
+#: automation/models.py:61
+msgid "Visible in filter selection"
+msgstr "Visible dans le filtre de sélection"
+
+#: automation/models.py:62 automation/models.py:91 automation/models.py:115
+#: automation/models.py:153 automation/models.py:185 automation/models.py:227
+msgid "Active"
+msgstr "Actif"
+
+#: automation/models.py:62
+msgid "Active by default in group selection"
+msgstr "Actif par défaut dans le groupe de sélection"
+
+#: automation/models.py:67 automation/templates/dashboard/config.html:16
+msgid "Sensors group"
+msgstr "Groupes de capteurs"
+
+#: automation/models.py:79
+msgid "All region"
+msgstr "Toute région"
+
+#: automation/models.py:80
+msgid "Circle"
+msgstr "Cercle"
+
+#: automation/models.py:81
+msgid "Rectangle"
+msgstr "Rectangle"
+
+#: automation/models.py:82
+msgid "Polygone"
+msgstr "Polygone"
+
+#: automation/models.py:84 automation/models.py:97 automation/models.py:176
+msgid "Location"
+msgstr "Emplacement"
+
+#: automation/models.py:85
+msgid "Flat"
+msgstr "Etage"
+
+#: automation/models.py:86
+msgid "Area shape"
+msgstr "Forme de la zone"
+
+#: automation/models.py:87
+msgid "Area coords"
+msgstr "Zone de coordonnées"
+
+#: automation/models.py:88
+msgid "Area href"
+msgstr "Zone href"
+
+#: automation/models.py:89
+msgid "Area onclick js"
+msgstr "Zone onclick js"
+
+#: automation/models.py:90
+msgid "Visible"
+msgstr "Visible"
+
+#: automation/models.py:90
+msgid "Visible in the filter of selection"
+msgstr "Visible dans le filtre de sélection"
+
+#: automation/models.py:91
+msgid "Active by default in location selection"
+msgstr "Actif par défaut dans le filtre sélection"
+
+#: automation/models.py:98 automation/templates/dashboard/config.html:14
+msgid "Locations"
+msgstr "Emplacements"
+
+#: automation/models.py:111 automation/models.py:174
+msgid "Template name"
+msgstr "Nom du gabarit"
+
+#: automation/models.py:113
+msgid "Html page"
+msgstr "Page html"
+
+#: automation/models.py:113
+msgid "Path to html template page name"
+msgstr "Chemin du fichier gabarit html"
+
+#: automation/models.py:114
+msgid "Application"
+msgstr "Applications"
+
+#: automation/models.py:119 automation/models.py:174
+msgid "Template"
+msgstr "Gabarits"
+
+#: automation/models.py:120
+msgid "Templates"
+msgstr "Gabarits"
+
+#: automation/models.py:151
+msgid "Route base name"
+msgstr "Nom de la route de base"
+
+#: automation/models.py:157
+msgid "Route base"
+msgstr "Route de base"
+
+#: automation/models.py:165 automation/models.py:189
+#: automation/templates/dashboard/config.html:17
+msgid "Navigation pane"
+msgstr "Volet de navigation"
+
+#: automation/models.py:165
+msgid "Navigation pane label"
+msgstr "Label volet de navigation"
+
+#: automation/models.py:166
+msgid "Menu title"
+msgstr "Titre menu"
+
+#: automation/models.py:167
+msgid "Icon Awesome"
+msgstr "Icon Awesome"
+
+#: automation/models.py:168
+msgid "Is index"
+msgstr "Index ?"
+
+#: automation/models.py:168
+msgid "Is a page index"
+msgstr "Est ce une page index"
+
+#: automation/models.py:170
+msgid "Url route base"
+msgstr "Url route de base"
+
+#: automation/models.py:171
+msgid "Code page"
+msgstr "Code page"
+
+#: automation/models.py:171
+msgid "Code page (64 chars long)"
+msgstr "Code page (64 caractères de long)"
+
+#: automation/models.py:172
+msgid "Link"
+msgstr "Lien"
+
+#: automation/models.py:172
+msgid "Link as /board/codepage/sensorgroup"
+msgstr "Lien comme /board/codepage/sensorgroup"
+
+#: automation/models.py:175
+msgid "If Url Pattern group considered"
+msgstr "Si Modède d'url groupe est envisagé"
+
+#: automation/models.py:176
+msgid "If Url Pattern location considered"
+msgstr "Si Modède d'url emplacement est envisagé"
+
+#: automation/models.py:177
+msgid "Url target"
+msgstr "Cible url"
+
+#: automation/models.py:177
+msgid "Url target for iframe"
+msgstr "Url cible ou iframe"
+
+#: automation/models.py:178
+msgid "Link: Target tag"
+msgstr "Lien: Balise cible"
+
+#: automation/models.py:179
+msgid "Link: Options tag"
+msgstr "Lien: Balise options"
+
+#: automation/models.py:179
+msgid "Example: onclick=\"func($(this))\""
+msgstr "Exemple: onclick=\"func($(this))\""
+
+#: automation/models.py:181
+msgid "Tab"
+msgstr "Onglet"
+
+#: automation/models.py:182
+msgid "Order"
+msgstr "Ordre"
+
+#: automation/models.py:182
+msgid "Position in navigation pane"
+msgstr "Position dans le volet de navigation"
+
+#: automation/models.py:183
+msgid "Position in pane "
+msgstr "Position dans le volet de navigation"
+
+#: automation/models.py:183
+msgid "upper: 1, bottom: 0"
+msgstr "Haut: 1, bas: 0"
+
+#: automation/models.py:184
+msgid "Show"
+msgstr "Montrer"
+
+#: automation/models.py:184
+msgid "Show in navigation pane "
+msgstr "Montrer dans volet de navigation"
+
+#: automation/models.py:185
+msgid "Active in navigation pane "
+msgstr "Actif dans volet de navigation"
+
+#: automation/models.py:216
+msgid "Tunnel name"
+msgstr "Nom du tunel"
+
+#: automation/models.py:217
+msgid "Ssh host server"
+msgstr "Serveur hôte ssh"
+
+#: automation/models.py:218
+msgid "ssh host port server"
+msgstr "Port du serveur hôte ssh"
+
+#: automation/models.py:219
+msgid "Ssh username"
+msgstr "Nom utilisateur ssh"
+
+#: automation/models.py:220
+msgid "Ssh password"
+msgstr "Mot de passe ssh"
+
+#: automation/models.py:222
+msgid "Remote bind host"
+msgstr "Hôte de liaison à distance"
+
+#: automation/models.py:223
+msgid "Remote bind host port"
+msgstr "Port hôte de liaison distante"
+
+#: automation/models.py:225
+msgid "Local bind host"
+msgstr "Hôte de liaison locale"
+
+#: automation/models.py:226
+msgid "Local bind host port"
+msgstr "Hôte de liaison locale"
+
+#: automation/models.py:231
+msgid "Ssh tunnel host"
+msgstr "Hôte du tunnel SSH"
+
+#: automation/models.py:232
+msgid "Ssh tunnel hosts"
+msgstr "Hôtes des tunnels SSH"
+
+#: automation/templates/app.inc/404.html:11
+msgid "Error: missing page."
+msgstr "Erreur page absente"
+
+#: automation/templates/app.inc/404.html:20
+msgid "This page does not exist. Please re-enter a new address."
+msgstr "Cette page n'existe pas. Indiquez une autre adresse"
+
+#: automation/templates/app.inc/500.html:10
+msgid "System error"
+msgstr "Erreur système"
+
+#: automation/templates/app.inc/500.html:19
+msgid ""
+"This page server can't run correctly. Please contact the site administrator."
+msgstr ""
+"Cette page du serveur ne marche pas correctement. Merci de contacter "
+"l'administrateur"
+
+#: automation/templates/board.html:14
+msgid "Main page"
+msgstr "Page principale"
+
+#: automation/templates/board.html:30
+msgid "Navigation tabs"
+msgstr "Onglets de navigation"
+
+#: automation/templates/board.html:52 automation/templates/board.html:58
+msgid "Master mqtt server"
+msgstr "Serveur mqtt maître"
+
+#: automation/templates/board.html:53 automation/templates/board.html:59
+msgid "Zigbee2Mqtt gateway"
+msgstr "Passerelle Zigbee2Mqtt"
+
+#: automation/templates/dashboard/camera-replay-no-leaflet.html:9
+#: automation/templates/dashboard/camera-replay.html:20
+msgid "Start date"
+msgstr "Date début"
+
+#: automation/templates/dashboard/camera-replay-no-leaflet.html:10
+#: automation/templates/dashboard/camera-replay.html:21
+msgid "End date"
+msgstr "Date fin"
+
+#: automation/templates/dashboard/camera-replay.html:24
+msgid "Latitude"
+msgstr "Latitude"
+
+#: automation/templates/dashboard/camera-replay.html:25
+msgid "Nord"
+msgstr "Nord"
+
+#: automation/templates/dashboard/camera-replay.html:26
+msgid "South"
+msgstr "Sud"
+
+#: automation/templates/dashboard/camera-replay.html:31
+msgid "Longitude"
+msgstr "Longitude"
+
+#: automation/templates/dashboard/camera-replay.html:32
+msgid "West"
+msgstr "Ouest"
+
+#: automation/templates/dashboard/camera-replay.html:33
+msgid "Est"
+msgstr "Est"
+
+#: automation/templates/dashboard/camera-replay.html:39
+#: automation/templates/dashboard/mobile-box.html:20
+msgid "Reset"
+msgstr "Reset"
+
+#: automation/templates/dashboard/config.html:13
+msgid "Admin"
+msgstr "Administration"
+
+#: automation/templates/dashboard/config.html:15
+msgid "Devices"
+msgstr "Appareils"
+
+#: automation/templates/dashboard/config.html:18
+msgid "Products"
+msgstr "Produits"
+
+#: automation/templates/dashboard/config.html:21
+msgid "Users"
+msgstr "Utilisateurs"
+
+#: automation/templates/dashboard/config.html:22
+msgid "Periodic task"
+msgstr "Tâche périodique"
+
+#: automation/templates/dashboard/config.html:23
+msgid "Processes"
+msgstr "Processus"
+
+#: automation/templates/dashboard/config.html:24
+msgid "Site maintenance"
+msgstr "Maintenance du site"
+
+#: automation/templates/dashboard/config.html:25
+#: automation/templates/dashboard/supervisor.html:6
+msgid "Cameras maintenance"
+msgstr "Maintenance des caméras"
+
+#: automation/templates/dashboard/config.html:26
+msgid "Stocks"
+msgstr "Stocks"
+
+#: automation/templates/dashboard/config.html:34
+#: automation/templates/menu-right.html:11
+#: automation/templates/menu-right.html:14
+msgid "Logout"
+msgstr "Déconnexion"
+
+#: automation/templates/dashboard/live.html:5
+msgid "Group filter"
+msgstr "Filtre de groupe"
+
+#: automation/templates/dashboard/live.html:7
+msgid "Group"
+msgstr "Groupe"
+
+#: automation/templates/dashboard/live.html:8
+msgid "Select all / reset"
+msgstr "Tout sélectionner / reset"
+
+#: automation/templates/dashboard/live.html:15
+msgid "Show selection"
+msgstr "Afficher la sélection"
+
+#: automation/templates/dashboard/location-filter-inc.html:9
+msgid "Reset / All"
+msgstr "Reset / Tout"
+
+#: automation/templates/dashboard/location-filter-inc.html:14
+msgid "Modify locations"
+msgstr "Modifier les emplacements"
+
+#: automation/templates/dashboard/location-filter-inc.html:14
+msgid "Modify"
+msgstr "Modifier"
+
+#: automation/templates/menu-right.html:8
+msgid "Database admin"
+msgstr "Administration base de données"
+
+#: automation/templates/menu-right.html:9
+msgid "Maintenance"
+msgstr "Maintenance"
+
+#: automation/templatetags/apptags.py:58
+msgid "Yes"
+msgstr "Oui"
+
+#: automation/templatetags/apptags.py:58
+msgid "No"
+msgstr "Non"
+
+#: contrib/models.py:28
+msgid "date time creation"
+msgstr "Date de création"
+
+#: contrib/models.py:29
+msgid "Datetime modification"
+msgstr "Datetime midiification"

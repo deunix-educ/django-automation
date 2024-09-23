@@ -1,0 +1,21 @@
+{% extends 'devices/device-box.html' %}
+{% load i18n boardtags %}
+ {% block box_data %}
+    <div class="w3-cell w3-cell-top w3-padding-1">
+        <div>
+            <i class="fas fa-bolt w3-text-amber"></i>
+            <span class="pac w3-text-red"></span> <span class="w3-text-red">W </span> <span class="eac"></span> %
+        </div>
+        <div>
+            <i class="fas fa-solar-panel w3-text-amber"></i>
+            <span class="pdc w3-text-orange"></span> <span class="w3-text-orange">W </span> <span class="edc"></span> %
+        </div>
+        <div><i class="fas fa-temperature-low w3-text-amber"></i> <span class="tmpr"></span> <span>°C</span></div>
+        <div><i class="fas fa-exclamation-triangle w3-text-amber"></i> <span class="stat"></span></div>
+        <div><i class="fas fa-bolt w3-text-amber"></i> <span class="ivmax"></span> Wc {% trans 'maxi' %}</div>
+        <div><i class="fa-solid fa-plug-circle-bolt w3-text-amber"></i> <span class="qdy"></span> kWh {% trans 'this day' %}</div>
+    </div>
+{% endblock %}
+ {% block box_js %}
+	{% load_js_script 'devices/solarmax/js.html' %}
+{% endblock %}

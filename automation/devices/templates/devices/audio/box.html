@@ -1,0 +1,40 @@
+{% extends 'devices/device-sound-box.html' %}
+{% load i18n boardtags %}
+
+{% block box_menu %}
+    <div class="w3-dropdown-content w3-bar-block w3-border w3-dark-plus">
+         <div class="w3-bar-item">Canaux <input id="channels-{{ device.uuid }}" class="w3-right" type="number" min="1" max="2" step="1" value="" /></div>
+         <div class="w3-bar-item">Fréquence&nbsp;&nbsp;
+             <select id="rate-{{ device.uuid }}" class="w3-right">
+                <option value="8000">8000 Hz</option>
+                <option value="22050">22050 Hz</option>
+                <option value="44100">44100 Hz</option>
+                <option value="48000">48000 Hz</option>
+             </select>
+        </div>
+        <div class="w3-bar-item">Durée <input id="duration-{{ device.uuid }}" class="w3-right" type="number" min="1" max="60" step="1" value="" /></div>
+        <div class="w3-bar-item">Enregistrement&nbsp;&nbsp;
+            <select class="record-{{ device.uuid }} w3-right">
+                <option value="0">Non</option>
+                <option value="1">Continu</option>
+            </select>
+        </div>
+        <div class="w3-bar-item">Configuration <a href="#" class="w3-button w3-teal w3-right w3-padding-0" onclick="audio_params('{{ device.uuid }}')">Sauver</a></div>
+    </div>
+{% endblock %}
+{% block box_detail %}
+    <div class="w3-center w3-padding">
+        <audio id="snd-{{ device.uuid }}" controls></audio>
+    </div>
+    <div class="w3-cell-row w3-dark-medium">
+        <div class="w3-cell w3-text-orange">
+            {% button_play_pause btn=device.uuid js='onclick="audio_controller($(this))"' %}
+            N°: <span class="count-{{ device.uuid }}"></span>
+        </div>
+        <div class="w3-cell w3-text-orange w3-right w3-small">
+            <span class="lat-{{ device.uuid }}"></span>&nbsp;&nbsp;
+            <span class="lon-{{ device.uuid }}"></span>&nbsp;&nbsp;
+        </div>
+    </div>    
+    {% load_js_script 'devices/audio/js.html' %}
+{% endblock %}

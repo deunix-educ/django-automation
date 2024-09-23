@@ -1,0 +1,92 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags apptags i18n %}
+
+{% block content %}
+<form action="" method="get">
+    {% csrf_token %}
+    <div id="_rsv_filter" class="w3-cell-row w3-padding">
+        <div class="w3-cell w3-w15">{{ form.year|as_crispy_field }}</div>
+        <div class="w3-cell w3-w20">
+            {% trans 'Stock' %}<br>
+            {{ form.alert|as_crispy_field }} {{ form.expired|as_crispy_field }}
+            <div class="w3-border w3-margin-top-1"></div>
+            {{ form.removed|as_crispy_field }} {{ form.to_order|as_crispy_field }}
+            {% url 'reserves:order_to_pdf' as order  %}
+            <div class="w3-margin-top-2">
+                <a href="{% urlparams order request.GET %}" class="w3-button w3-padding-1"><i class="fas fa-file-pdf fa-2x w3-text-red"></i>&nbsp;{% trans 'Print' %}</a>
+            </div>
+        </div>
+        <div class="w3-cell w3-w35">{{ form.location|as_crispy_field }}</div>
+        <div class="w3-cell">
+            {{ form.product|as_crispy_field }}<br>
+            {{ form.product_type|as_crispy_field }}<br>
+            <a href="{% url 'reserves:stock_create' %}" class="w3-button w3-xlarge w3-transparent w3-margin-top-2 w3-border w3-block">
+                <i class="fa-solid fa-circle-plus w3-text-blue"></i> {% trans 'Create' %}
+            </a>
+        </div>
+        <!--div class="w3-cell w3-w35">{{ form.packaging|as_crispy_field }}</div-->
+    </div>  
+    <div id="_rsv_click" class="_click-line"></div> 
+    <script>
+    $('#_rsv_click').click(function(e) { if( (e.offsetY)<=parseInt($(this).css('border-bottom-width'))) { $('#_rsv_filter').toggle(); } });
+    </script>    
+    <div class="w3-cell-row w3-mobile w3-border-bottom">
+		{% for q in qs %}
+		<div class="w3-cell-row w3-mobile w3-border-bottom">
+		    <div class="w3-cell w3-cell-middle w3-w10 w3-padding-1">
+                <span class="w3-center cursor-pointer" title="{% trans 'Stocked' %}">{{ q.stocked|ico_yes_no}}</span>&nbsp;
+                <span class="cursor-pointer" title="{% trans 'Date' %}">{{ q.created|date:"N Y" }}</span>
+		    </div>
+		    <div class="w3-cell w3-cell-middle" title="{% trans 'Product' %}">
+		        <div class="w3-cell-row">
+		            <div class="w3-cell w3-cell-middle w3-w05">
+                        <a href="{% url 'reserves:stock_edit' pk=q.id %}" title="{% trans 'Stock edit' %}">
+                            <img class="w3-circle" src="{{ q.product.photo.url }}" width="64px" height="64px">
+                        </a>
+                    </div>
+		            <div class="w3-cell w3-cell-middle w3-padding-2">
+		               <span class="w3-xlarge">{{ q.product.name }}</span>
+		               <span class="w3-badge w3-small" style="background-color:{{ q.product.color }}" title="{% trans 'Order' %}">
+		                  {% if q.product_to_order %}&nbsp;{{ q.product_to_order }}{% endif %}
+		               </span><br>
+		               <span class="w3-small">{{ q.location.name }}:
+		                  <span class="w3-badge" style="background-color:{{ q.location.color }}" title="{% trans 'Range' %}">&nbsp;{{ q.range }}</span>
+		               </span><br>
+		               <small title="{% trans 'Packaging' %}">{{ q.packaging.name }}</small>
+		            </div>
+		        </div>  
+		    </div>
+		    <div class="w3-cell w3-cell-middle w3-w05" title="{% trans 'Pull' %}">
+		       <a href="#" class="w3-button w3-circle w3-red" onclick='_rem("{% url 'reserves:stock_remove' pk=q.id %}")'><i class="fas fa-minus w3-xlarge"></i></a>
+	        </div>
+		    <div class="w3-cell w3-cell-middle w3-w10" title="{% trans 'Rest' %}"><span class="w3-center amount-{{ q.id }}"><h2>{{ q.amount }}</h2></span></div>
+		    <div class="w3-cell w3-cell-middle w3-w05" title=">{% trans 'Add' %}">
+		       <a href="#" class="w3-button w3-circle w3-green" onclick='_add("{% url 'reserves:stock_add' pk=q.id %}")'><i class="fas fa-plus w3-xlarge"></i></a>
+	        </div>
+		    <div class="w3-cell w3-cell-middle w3-w05 w3-center">   
+		      {% if q.expired_product %}<i class="w3-center fas fa-skull-crossbones w3-text-orange cursor-pointer"  title="{% trans 'Expired' %}"></i>{% endif %}<br>
+		      
+		      {% if q.alert_product %}<i class="w3-center fas fa-exclamation-triangle w3-text-orange cursor-pointer" title="{% trans 'Alert' %}"></i>{% endif %}
+		    </div>
+	    </div>
+    </div>
+    {% endfor %}    
+</form>
+{% endblock %}
+{% block js_footer %}
+	{{ block.super }}
+	<script>
+	function _rem(url) { var id = lastString(url, '/'); $.post(url).done(function(r) {$("span.amount-" + id).html("<h1>"+r.amount+"</h1>"); });	}
+	function _add(url) { var id = lastString(url, '/'); $.post(url).done(function(r) {$("span.amount-" + id).html("<h1>"+r.amount+"</h1>"); });	}
+	</script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+{% load i18n %}
+{% if not request.user.is_anonymous %}
+<div class="w3-dropdown-hover w3-right">
+    <button class="w3-button "><span>{{ request.user.username }}&nbsp; &#9776;</span></button>
+    <div class="w3-dropdown-content w3-bar-block w3-border w3-dark-medium" style="right:.1em;">
+        <!--a href="#" class="w3-bar-item w3-button"><i class="fas fa-water w3-text-cyan"></i> devices list </a-->
+        {% if request.user.is_superuser %}
+        <a href="/admin/" class="w3-bar-item w3-button"><i class="fas fa-database w3-text-orange"></i> {% trans 'Database admin' %}</a>
+        <a href="{% url 'maintenance' %}" class="w3-bar-item w3-button"><i class="fa-solid fa-screwdriver-wrench w3-text-orange"></i> {% trans 'Maintenance' %}</a>
+        {% endif %}
+        <!--a href="{% url 'logout' %}" class="w3-bar-item w3-button"><i class="fas fa-sign-out-alt w3-text-red"></i> {% trans 'Logout' %}</a-->
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button class="w3-bar-item w3-button" type="submit"><i class="fas fa-sign-out-alt w3-text-red"></i> {% trans 'Logout' %}</button>
+        </form>
+    </div>
+</div>
+{% endif %}

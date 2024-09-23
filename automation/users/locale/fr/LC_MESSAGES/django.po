@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-03 22:57+0200\n"
+"PO-Revision-Date: 2024-09-04 09:24+0200\n"
+"Last-Translator: Denis  <denis.defolie@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.10.0\n"
+
+#: users/apps.py:7 users/models.py:71
+msgid "Users"
+msgstr "Utilisateurs"
+
+#: users/models.py:15
+msgid "Home site name"
+msgstr "Nom du site"
+
+#: users/models.py:16 users/models.py:34
+msgid "Picture site"
+msgstr "Image du site"
+
+#: users/models.py:17 users/models.py:50
+msgid "Address 1"
+msgstr "Adresse 1"
+
+#: users/models.py:18 users/models.py:51
+msgid "Address 2"
+msgstr "Adresse 2"
+
+#: users/models.py:19 users/models.py:52
+msgid "Zip code"
+msgstr "Code postal"
+
+#: users/models.py:20 users/models.py:53
+msgid "City"
+msgstr "Ville"
+
+#: users/models.py:24
+msgid "Altitude"
+msgstr "Altitude"
+
+#: users/models.py:25
+msgid "Zoom minimum"
+msgstr "Zoom minimum"
+
+#: users/models.py:25
+msgid "Leaflet Zoom minimum"
+msgstr "Leaflet Zoom minimum"
+
+#: users/models.py:26
+msgid "Zoom maximum"
+msgstr "Zoom maximum"
+
+#: users/models.py:26
+msgid "Leaflet Zoom maximum"
+msgstr "Leaflet Zoom maximum"
+
+#: users/models.py:43
+msgid "Home site"
+msgstr "Site habitation"
+
+#: users/models.py:44
+msgid "Homes site"
+msgstr "Sites habitation"
+
+#: users/models.py:49
+msgid "Home site Owner"
+msgstr "Nom du  propriétaire du site"
+
+#: users/models.py:54
+msgid "Mobile phone"
+msgstr "Téléphone mobile"
+
+#: users/models.py:55 users/models.py:64
+msgid "Photo"
+msgstr "Photo"
+
+#: users/models.py:70
+msgid "User"
+msgstr "Utilisateur"
+
+#: users/models.py:85
+msgid "Logged User"
+msgstr "Utilisateur connecté"
+
+#: users/models.py:86
+msgid "Logged Users"
+msgstr "Utilisateurs connectés"

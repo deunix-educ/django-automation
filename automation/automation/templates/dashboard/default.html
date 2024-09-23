@@ -1,0 +1,14 @@
+{% extends 'board-base.html' %}
+{% load i18n apptags %}
+{% block content %}
+    <div class="w3-flex-container-center w3-padding-2">
+    {% for device in devices %}
+        {% concat 'devices/' device.sensor '/box.html' as template %}
+        {% include template %}
+    {% endfor %}
+    </div>
+{% endblock %}
+{% block footer %}
+    {{ block.super }}
+    {% include "devices/plot/plot-modal.html" %}
+{% endblock  %}

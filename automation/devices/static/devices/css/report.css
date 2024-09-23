@@ -1,0 +1,6 @@
+
+.orange-circle  { background: #f57900; border-radius: 50%; box-shadow: 3px 3px 2px grey; -moz-box-shadow: 3px 3px 2px grey; -webkit-box-shadow: 3px 3px 2px grey; }
+.blue-circle    { background: #0000ff; border-radius: 50%; box-shadow: 3px 3px 2px grey; -moz-box-shadow: 3px 3px 2px grey; -webkit-box-shadow: 3px 3px 2px grey; }
+
+input.geo       { width: 6em; margin-top: 0.5em;  }
+input.datetime  { width: 10em; margin-top: 0.5em; }

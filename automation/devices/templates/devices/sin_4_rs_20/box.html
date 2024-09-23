@@ -1,0 +1,30 @@
+{% extends "devices/device-box.html" %}
+{% load i18n boardtags %}
+{% block box_data %}
+    <div class="w3-cell">
+         <div class="w3-row">
+            <div class="w3-col s3">{% trans 'State' %}</div>
+            <div class="w3-col s9">
+                <div class="w3-bar">
+                <button id="open-{{ device.uuid }}" class="{{ device.uuid }} w3-button w3-small w3-padding-1 w3-border" value="OPEN" onclick="sin_4_rs_20State($(this))">OUVRIR</button>
+                <button id="close-{{ device.uuid }}" class="{{ device.uuid }} w3-button w3-small w3-padding-1 w3-border" value="CLOSE"  onclick="sin_4_rs_20State($(this))">FERMER</button>
+                <button id="stop-{{ device.uuid }}" class="{{ device.uuid }} w3-button w3-small w3-padding-1 w3-border" value="STOP" onclick="sin_4_rs_20State($(this))" >STOP</button>
+                </div>
+            </div>
+        </div>       
+        <div class="w3-row w3-margin-top-2">
+            <div class="w3-col s4">{% trans 'Position' %}</div>
+            <div class="w3-col s8"><input id="pos-{{ device.uuid }}" type="range" min="1" max="100" value="100" onchange="sin_4_rs_20Pos($(this))"> %</div>
+		</div>	
+        <div class="w3-row">
+            <div class="w3-col s4">{% trans 'Tilt' %}</div>
+            <div class="w3-col s8"><input id="tilt-{{ device.uuid }}" type="range" min="1" max="100" value="100"  onchange="sin_4_rs_20Tilt($(this))"></div>
+        </div>
+        
+        <div><i class="fa-solid fa-signal w3-text-amber"></i> <span class="linkquality-{{ device.uuid }}"></span></div>
+    </div>
+    
+{% endblock %}
+{% block box_js %}
+    {% load_js_script "devices/sin_4_rs_20/js.html" %}
+{% endblock %}

@@ -1,0 +1,39 @@
+{% load i18n boardtags %}
+{% block box_detail %}
+<div id="{{ device.uuid }}" class="w3-card-4 w3-border w3-margin-1 w3-nbsp w3-dark-low box" style="min-width:{{ device.width }}px;">
+    <div class="w3-cell-row w3-text-amber w3-dark-xligh">
+        <div class="w3-cell w3-cell-center">&nbsp;
+                <button onclick="remove_camera('{{ device.uuid }}')" class="w3-btn w3-no-padding w3-large" title="{% trans 'Remove camera' %}">
+                <i class="fa-regular fa-circle-xmark w3-text-red"></i>
+            </button>         
+        </div>    
+        <div class="w3-cell w3-cell-top">{{ device.name }}</div>    
+        <div class="w3-cell w3-small w3-cell-top w3-right-align">        
+            <span class="mts-{{ device.uuid }}"></span>&nbsp;<i class="fa-solid fa-clock w3-text-orange w3-padding-1"></i><br>
+            <span>{{ device.ip }}</span>&nbsp;<i class="fa-solid fa-globe w3-text-cyan w3-padding-1"></i>
+        </div>   
+    </div>
+    <div class="w3-center">
+        <img class="mjpg-{{ device.uuid }} w3-image cursor-pointer jpeg" onclick="videoPreview('mjpg-{{ device.uuid }}')" style="z-index:100;">
+    </div>
+    <div class="w3-cell-row w3-dark-medium w3-small">
+        <div class="w3-cell w3-text-orange">
+            {% trans 'Reset or stop' as reset_msg  %}
+            {% button_reset btn=device.uuid js='onclick="reset_controller($(this))"' title=reset_msg %}
+            {% trans 'Play or pause' as play_msg  %}
+            {% button_play_pause btn=device.uuid js='onclick="replay_controller($(this))"' title=play_msg %}
+            <span class="mcount-{{ device.uuid }}"></span>&nbsp;
+            <span class="msg-{{ device.uuid }} w3-text-amber">{% trans 'ready' %}</span>
+            <span class="w3-right">{% trans 'fps' %}
+	            <select id='mfps-{{ device.uuid }}' class="w3-margin-3" onchange="fps_controller($(this))">
+	                <option value="">{% trans 'Auto' %}</option>
+	                {% for fps in fpsrange %}
+	                <option value="{{ fps }}">{{ fps }}</option>
+	                {% endfor %}
+	            </select>
+            </span>
+         </div>
+    </div>
+    {% load_js_script 'devices/camera/replay/js-replay.html' %}
+</div>
+{% endblock %}

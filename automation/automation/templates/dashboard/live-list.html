@@ -1,0 +1,13 @@
+{% extends 'dashboard/live.html' %}
+{% load i18n apptags %}
+{% block filters %}
+    {% include 'dashboard/location-filter-inc.html' %}
+{% endblock %}
+{% block content %}
+	 <div class="w3-container">
+        {% for device in devices %}
+            {% concat 'devices/' device.sensor '/list.html' as template %}
+            {% include template %}
+        {% endfor %}
+	 </div>	 
+{% endblock %}

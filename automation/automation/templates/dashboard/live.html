@@ -1,0 +1,20 @@
+{% extends 'dashboard/default.html' %}
+{% load i18n apptags %}
+{% block menubar %}
+	<div class="w3-dropdown-hover w3-right w3-padding" style="witdh: 350px">
+	    <button class="w3-button"><i class="fa-solid fa-layer-group w3-text-orange"></i>&nbsp;<span>{% trans 'Group filter' %}</span></button>
+	    <div class="w3-dropdown-content w3-bar-block w3-border w3-dark-medium" style="right:1em;">
+            <h4 class="w3-dark-light w3-center">{% trans 'Group' %}</h4>
+            {% trans 'Select all / reset' as slt_all %}
+            <div>{% check_all 'grouped' title=slt_all %}</div>      
+            {% for item in grouped %}
+            {% in_charlist group_checked item.id as checked%}
+             <span class="w3-padding-0 w3-margin-left-4">{% check_pk 'grouped' item.id checked %} {{ item.title }}</span><br>
+            {% endfor %}
+            <div class="w3-center">
+                <input type="submit" class="w3-button w3-blue-grey w3-padding w3-margin" value="{% trans 'Show selection' %}" />
+            </div>
+	    </div>
+	</div>
+{% endblock %}
+

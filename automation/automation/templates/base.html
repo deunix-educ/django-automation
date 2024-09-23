@@ -1,0 +1,17 @@
+{% extends 'layout-board.html' %}
+
+{% block navbar %}
+	<div class="w3-bar w3-dark-light">
+        <span class="w3-bar-item w3-large">
+	       {% block ss_title_bar %}{{ APP_SUB_TITLE }}{% endblock %}
+	    </span>
+	    {% block menu-left %}{% endblock  %}
+	    {% block menubar %}{% endblock  %}
+	</div>
+{% endblock %}
+
+{% block footer %}
+    {% include "app.inc/video-preview.html" %}
+    {% include "app.inc/footer.html" %}
+
+{% endblock  %}

@@ -1,0 +1,14 @@
+{% extends 'devices/device-list.html' %}
+{% load i18n boardtags %}
+{% block list_detail %}
+    <div class="w3-cell w3-cell-top w3-padding-small w3-mobile w3-w25">
+        <div><i class="fab fa-superpowers w3-text-amber"></i>  {% trans 'Power' %}: <span class="PAPP w3-text-red"></span> <span class="w3-text-red">VA</span></div>
+        <div><i class="fas fa-bolt w3-text-amber"></i> {% trans 'Intensity' %}: <span class="IINST w3-text-orange"></span> <span class="w3-text-orange">A</span></div>
+    </div>
+    <div class="w3-cell w3-cell-top w3-padding-small w3-mobile w3-w25">
+        <div><i class="fas fa-euro-sign w3-text-amber"></i> {% trans 'Price' %}: <span class="PTEC"></span></div>
+        <div><i class="fas fa-sun w3-text-amber"></i> HP: <span class="HCHP"></span> <span>KWh</span></div>
+        <div><i class="far fa-moon w3-text-amber"></i> HC: <span class="HCHC"></span> <span>KWh</span></div>
+    </div>
+    {% load_js_script 'devices/linky/js.html' %}
+{% endblock %}

@@ -1,0 +1,18 @@
+{% load boardtags %}
+
+<div id="{{ device.uuid }}" class="w3-card-4 w3-border w3-margin-01 w3-nbsp w3-dark-light" style="max-width:{{ device.width }}px;">
+    <div class="w3-bar w3-dark-grey">
+		<div class="w3-dropdown-hover">
+		    <button class="w3-button w3-dark-grey"><i class="fa-solid fa-bars w3-text-amber"></i></button>
+		    {% if request.user.is_superuser %}
+		    {% block box_menu %}{% endblock %}
+		    {% endif %}
+		</div>
+        <div class="w3-text-amber">
+            &nbsp;{{ device.name }}
+            <span class="w3-right w3-small"><i class="fa-solid fa-clock w3-text-orange"></i> <span class="ts-{{ device.uuid }}"></span>&nbsp;</span><br>
+            <span class="w3-right w3-small"><i class="fa-solid fa-globe w3-text-cyan"></i> <span> {{ device.ip }}</span>&nbsp;</span>&nbsp;
+        </div>
+    </div>
+	{% block box_detail %}{% endblock %}
+</div>

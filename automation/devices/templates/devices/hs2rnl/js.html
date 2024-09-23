@@ -1,0 +1,12 @@
+<script>
+    function hs2rnlToggle(btn) {
+        var uuid = uuidFromBtn(btn);
+        sendMqttMessage(uuid, '/set', {state: 'TOGGLE'})
+    }  
+    
+    function hs2rnlControl(mqtt, args, payload) {
+        $("span.ts-"+args.uuid).text(to_localeDateMillisecond( tsNow() ));
+        $("span.linkquality-"+args.uuid).text( parseInt(payload.linkquality) );  
+        setBtnOnOff(payload.state, args.uuid);   
+    }
+ </script>

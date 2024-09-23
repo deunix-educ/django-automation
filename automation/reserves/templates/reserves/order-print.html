@@ -1,0 +1,29 @@
+{% load i18n apptags %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{% trans 'Order list' %}</title>
+        {% include 'reserves/print/printing-css.html' %}   
+    </head>
+    <body>
+        {% include 'reserves/print/header.html' %}
+        {% include 'reserves/print/footer.html' %}
+
+       <div class="title">{{ title }}</div>   
+       <table class="print">
+           <tr>
+               <th colspan="2" class="text-left">{% trans 'Product name' %}</th>
+               <th class="text-left">{% trans 'Stock' %}</th>
+               <th class="text-left">{% trans 'On order' %}</th>
+           </tr>
+           {% for e in recs %}
+           <tr>
+               <td class="w75"><img src="{{ e.product.photo.url }}" alt="" height="64px"></td>
+               <td>&nbsp;{{ e.product.name }} </td>
+               <td>&nbsp;{{ e.amount }} {{ e.product.unity }}</td>
+               <td>{% if e.product_to_order %}{{ e.product_to_order }} {{ e.product.unity }}{% endif %}</td>     
+            </tr>                      
+           {% endfor %}
+       </table>
+    </body>
+</html>

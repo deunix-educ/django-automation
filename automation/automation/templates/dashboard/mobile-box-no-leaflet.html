@@ -1,0 +1,30 @@
+{% extends 'board-base.html' %}
+{% load i18n apptags boardtags %}
+ {% block menubar %}{% endblock  %}
+{% block content %}
+    <div class="w3-flex-container-center w3-padding-2">
+    {% for device in devices %}
+        {% concat 'devices/' device.sensor '/box.html' as template %}
+        {% include template %}
+    {% endfor %}
+    </div>
+{% endblock %}
+{% block js_footer %}
+    <script>
+    let mobile_map = true;
+	let slide_w = "600px";
+	let slide_id = $('div.left-side');
+	function search_open()       { slide_id.css("width", slide_w).css("display", "block");}
+	function search_close()      { slide_id.css("width", "0px").css("display", "none"); }
+	function search_toggle()     { slide_id.css('display')=='none' ? search_open(): search_close(); }
+	search_open();
+	$('#left-side-click').click(function(e) { if( (e.offsetX)<=parseInt($(this).css('border-left-width'))) { search_toggle(); } }); 
+    var defaultLat  = toFloat("{{ request.user.homesite.lat }}", 6);
+    var defaultLon  = toFloat("{{ request.user.homesite.lon }}", 6);
+    var minZoom     = parseInt("{{ request.user.homesite.min_zoom }}");
+    var maxZoom     = parseInt("{{ request.user.homesite.max_zoom }}");
+    </script>   
+    {{ block.super }}
+{% endblock %}
+
+

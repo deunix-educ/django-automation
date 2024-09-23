@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block main_layout %}
+<div class="w3-cell-row">
+    <div class="menu-board w3-cell w3-cell-top">
+        {% block menu_board %}{% endblock  %}
+    </div>
+    <div class="main-board w3-cell w3-cell-top">
+        <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+	        {% block navbar %}{% endblock  %}
+	        {% block filters %}{% endblock %}
+        </form>
+        <div id="topsite">
+            {% block header %}{% endblock  %}
+            {% block alert %}{% include 'app.inc/alert.html' %}{% endblock  %}          
+            {% block content %}{% endblock %}
+        </div>
+	    {% block footer %}{% endblock  %}
+        {% block js_footer %}{% endblock %}
+   </div>
+</div>
+{% endblock %}

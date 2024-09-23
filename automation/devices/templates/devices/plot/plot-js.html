@@ -1,0 +1,24 @@
+{% if device %}
+<script>
+	var urlforGraph = "{% url 'devices:load_chart' pid=device.id %}";
+	var timer = null;
+	function graphReload(callback, timeout) {
+	    $('#loader').removeClass('w3-hide').addClass('w3-show');
+        $.post(urlforGraph, JSON.stringify({
+			date_range: $('#id_date_range').val(),
+			frequency: $('#id_frequency').val(),
+			refresh: $('#id_refresh').val(),
+			figure: $('#id_figure').val(),
+			mode: $('#id_mode').val(),
+			interpolation: $('#id_interpolation').val(),
+	    })).done(function(r) {
+	    	$('#loader').removeClass('w3-show').addClass('w3-hide');
+		    $('#plot-content').html(r.graph);
+            return callback && callback(timeout);
+	    });
+	}
+	function plotLoop(timeout) 	{ window.clearTimeout(timer); timer = window.setTimeout(graphReload, Number(timeout)*1000, plotLoop, timeout);}
+	function plotInit() 		{ graphReload(); plotLoop($('#id_refresh').val()); }
+	plotInit();
+</script>
+{% endif %}  

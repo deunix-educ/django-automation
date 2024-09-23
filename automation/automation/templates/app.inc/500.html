@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<div class="w3-container">
+    <div class="w3-black w3-border w3-display-middle">
+        {% block main-bar %}
+            <div class="w3-orange">
+                <div class="w3-bar">
+                    <div class="w3-bar-item">{% block ss_title_bar %}{% trans "System error" %}{% endblock %}</div>
+                    <div class="w3-right">
+                        <a href="/" class="w3-bar-item w3-button w3-right">&times;</a>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    {% block main-page %}
+        <h4 class="w3-marging w3-padding-32 w3-center">
+        {% trans "This page server can't run correctly. Please contact the site administrator." %}
+        </h4>
+    {% endblock %}
+    </div>
+</div>
+{% endblock %}
+
+

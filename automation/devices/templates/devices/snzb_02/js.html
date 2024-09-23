@@ -1,0 +1,11 @@
+
+    <script>
+        function snzb_02Control(mqtt, args, payload) {
+            $("span.ts-"+args.uuid).text(to_localeDateMillisecond( tsNow() ));
+            $("span.battery-"+args.uuid).text(payload.battery);
+            $("span.humidity-"+args.uuid).text( parseFloat(payload.humidity).toFixed(2) );
+            $("span.temperature-"+args.uuid).text( parseFloat(payload.temperature).toFixed(2) );
+            $("span.voltage-"+args.uuid).text( parseInt( payload.voltage) );
+            $("span.linkquality-"+args.uuid).text( parseInt(payload.linkquality) );
+        }
+    </script>

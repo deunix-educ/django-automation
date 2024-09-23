@@ -1,0 +1,57 @@
+{% load i18n %}
+<script>
+ 
+    var status_msg = {
+        "pending": "{% trans 'in progress' %}",
+        "finished": "{% trans 'finished' %}",
+        "ready": "{% trans 'ready' %}",
+    }
+    function replay_params(uuid) {
+        return {
+            fps: $('#mfps-' + uuid).val(),
+            lat_n: $('#id_lat_n').val(),
+            lat_s: $('#id_lat_s').val(),
+            lon_w: $('#id_lon_w').val(),
+            lon_e: $('#id_lon_e').val(),
+            start_date: new Date($('#id_start_date').val()).getTime(),
+            end_date: new Date($('#id_end_date').val()).getTime(),
+            state: $('span.state-'+uuid).text()
+        }
+    }
+    function remove_camera(uuid) {
+        $('#'+uuid).remove();
+        sendMqttMessage(uuid, '/replay/reset', replay_params(uuid));
+    }
+    function replay_controller(id) {
+        sendMqttMessage(uuidFromBtn(id), '/replay/toggle', replay_params(uuidFromBtn(id)));
+    }
+    function reset_controller(id) {
+        sendMqttMessage(uuidFromBtn(id), '/replay/reset', replay_params(uuidFromBtn(id)));
+    }
+    function fps_controller(id) {
+        sendMqttMessage(uuidFromBtn(id), '/replay/fps', replay_params(uuidFromBtn(id)));
+    }    
+    function replayControl(mqtt, args, payload) {
+        if (args.evt=="mjpg") {
+            $("img.mjpg-"+args.uuid).attr('src', 'data:image/jpeg;base64,' + bytesToBase64(payload));            
+            $("span.mfps-"+args.uuid).text(args.fps);
+            $("span.mcount-"+args.uuid).text(args.counter);
+            $("span.mts-"+args.uuid).text(to_localeDate(args.ts));
+            
+            var lat = "";
+            var lon = "";
+            if (args.lat != 'NaN' && args.lon != 'NaN') {
+                lat = toFloat(args.lat, 6)/1000000;
+                lon = toFloat(args.lon, 6)/1000000;
+                addTag(args.uuid, lat, lon);
+            }
+            $("span.mlat-"+args.uuid).text(lat);
+            $("span.mlon-"+args.uuid).text(lon);           
+            return;
+        } else if (args.evt=="replay-state") {
+            setBtnPlayPause(payload.state, args.uuid);
+            $("span.msg-"+args.uuid).text(status_msg[payload.msg]);
+            if (payload.msg=='ready') { $("span.mcount-"+args.uuid).text(""); }
+        }
+    }
+</script>

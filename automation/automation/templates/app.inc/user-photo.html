@@ -1,0 +1,6 @@
+
+{% if request.user.photo %}
+	<img src="{{ request.user.photo.url }}" class="w3-circle" height="48px">
+{% else %}
+	<img src="/static/img/nobody.png" class="w3-circle" height="48px">
+{% endif %}

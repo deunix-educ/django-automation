@@ -1,0 +1,13 @@
+{% extends "devices/device-box.html" %}
+{% load i18n boardtags %}
+{% block box_data %}
+    <div class="w3-cell w3-cell-top w3-padding-small">
+        <div><i class="fas fa-temperature-low w3-text-amber"></i> <span class="temperature-{{ device.uuid }}"></span> <span>°C</span></div>
+        <div><i class="fa-solid fa-droplet w3-text-amber"></i> <span class="humidity-{{ device.uuid }}"></span></div>
+        <div><i class="fa-solid fa-car-battery w3-text-amber"></i>  <span class="battery-{{ device.uuid }}"></span> %</div>
+        <div><i class="fa-solid fa-wifi w3-text-amber"></i> <span class="linkquality-{{ device.uuid }}"></span></div>
+    </div>
+ {% endblock %}   
+ {% block box_js %}  
+    {% load_js_script "devices/snzb_02d/js.html" %}
+{% endblock %}

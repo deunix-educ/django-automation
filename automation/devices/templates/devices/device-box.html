@@ -1,0 +1,53 @@
+{% load i18n boardtags %}
+ {% get_tasks device as devicetasks %}
+ <div id="{{ device.uuid }}" class="w3-card-4 w3-border w3-margin-1 w3-nbsp w3-dark-low box" style="min-width:{{ device.width }}px;">
+    <div class="w3-cell-row w3-text-amber w3-dark-xlight">
+         <div class="w3-cell w3-cell-center">&nbsp;
+            <button onclick="$('#'+'{{ device.uuid }}').remove()" class="w3-btn w3-circle w3-transparent w3-xlarge w3-no-padding" title="{% trans 'Remove window' %}">
+                <i class="fa-regular fa-circle-xmark w3-text-red"></i>
+            </button>         
+        </div>    
+        <div class="w3-cell w3-cell-top">{{ device.name }}</div>   
+        <div class="w3-cell w3-small w3-cell-top w3-right-align">        
+            <span class="ts-{{ device.uuid }}"></span>&nbsp;<i class="fa-solid fa-clock w3-text-orange w3-padding-1"></i><br>
+            <span>{{ device.ip }}</span>&nbsp;<i class="fa-solid fa-globe w3-text-cyan w3-padding-1"></i>
+        </div> 
+		{% if request.user.is_superuser and devicetasks %}
+		<div class="w3-cell w3-dropdown-hover">
+		    <button class="w3-btn w3-no-padding"><i class="fa-solid fa-bars w3-text-amber w3-large"></i></button>
+		    {% block box_menu %}
+		    <div class="w3-dropdown-content w3-bar-block w3-border w3-dark-medium" style="width:240px; right:0.05em">
+		        <div class="w3-bar-item"><i class="fa-solid fa-list-check w3-text-orange"></i> {% trans 'Periodic tasks' %}</div>
+		        <div class="w3-bar-item w3-small">
+		            {% for d in devicetasks %}
+		            <div>
+		               <i class="fa-solid fa-calendar-days w3-text-amber"></i>
+		                   <a href="/admin/django_celery_beat/periodictask/{{ d.task.id }}/change/" target="_blank" class="w3-no-deco">{{ d.task.name }}</a>
+		            </div>
+		            {% endfor %}
+		        </div>
+		    </div>
+		    {% endblock %}
+		</div>
+		{% endif %}
+    </div>
+	{% block box_detail %}
+	    <div class="w3-cell-row {{ device.bg }}">
+	        {% block box_info %}
+	        <div class="w3-cell w3-center">
+	            <b class="w3-small w3-text-deep-orange">{{ device.location.name|upper }}</b><br>
+	            <a href="{% url 'device_by_pid' page='default' pid=device.id %}"><img src="{{ device.image.url }}" height="64px" title="{{ device.uuid }}"></a><br>
+	            {% if device.plot.active %}
+	            {% url 'devices:graph_plot_by_id' pid=device.id as ifurl %}
+	            <button class="w3-button w3-circle w3-transparent w3-margin-1" onclick="plotModal('{{ ifurl }}', '{{ device.plot.title }}')" title="{% trans 'Chart' %}">
+	               <i class="fa-solid fa-chart-line w3-text-red"></i>
+	            </button>
+	            {% endif %}
+	        </div>
+	        {% endblock %}
+	        {% block box_data %}{% endblock %}
+	    </div>
+	    {% block box_footer %}{% endblock %}
+	    {% block box_js %}{% endblock %}
+	{% endblock %}
+</div>

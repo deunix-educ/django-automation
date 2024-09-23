@@ -1,0 +1,20 @@
+<script>
+    function double_left_switchToggle(id) {
+        var uuid = uuidFromBtn(id);
+        sendMqttMessage(uuid, '/set', {state: 'CLOSE', btn: 0});
+    }
+    
+    function double_right_switchToggle(id) {
+        var uuid = uuidFromBtn(id);
+        sendMqttMessage(uuid, '/set', {state: 'OPEN', btn: 1});
+    }
+    
+    function double_switchControl(mqtt, args, payload) {
+        $("span.ts-"+args.uuid).text(to_localeDateMillisecond( tsNow() )); 
+        if (args.evt=='state') { 
+            for (btn in payload.states) {
+                setBtnOnOff(payload.states[btn], btn); 
+            }
+        }
+    }
+</script>

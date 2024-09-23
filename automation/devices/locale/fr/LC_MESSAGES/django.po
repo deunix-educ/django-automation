@@ -1,0 +1,842 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-13 10:40+0200\n"
+"PO-Revision-Date: 2024-09-04 09:25+0200\n"
+"Last-Translator: Denis  <denis.defolie@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.10.0\n"
+
+#: devices/admin.py:41 devices/models.py:124
+msgid "Sensor group"
+msgstr "Groupe de capteurs"
+
+#: devices/admin.py:46 devices/models.py:141 devices/models.py:167
+msgid "Device image"
+msgstr "Image de l'appareil"
+
+#: devices/apps.py:6 devices/models.py:202
+msgid "Devices"
+msgstr "Appareils"
+
+#: devices/forms.py:11
+msgid "5 seconds"
+msgstr "5 secondes"
+
+#: devices/forms.py:12
+msgid "10 seconds"
+msgstr "10 secondes"
+
+#: devices/forms.py:13
+msgid "15 seconds"
+msgstr "15 secondes"
+
+#: devices/forms.py:14
+msgid "30 seconds"
+msgstr "30 secondes"
+
+#: devices/forms.py:15
+msgid "1 minute"
+msgstr "1 minute"
+
+#: devices/forms.py:16
+msgid "5 minutes"
+msgstr "5 minutes"
+
+#: devices/forms.py:17
+msgid "15 minutes"
+msgstr "15 minutes"
+
+#: devices/forms.py:18
+msgid "30 minutes"
+msgstr "30 minutes"
+
+#: devices/forms.py:19
+msgid "1 hour"
+msgstr "1 heure"
+
+#: devices/forms.py:20
+msgid "3 hours"
+msgstr "3 heures"
+
+#: devices/forms.py:21
+msgid "6 hours"
+msgstr "6 heures"
+
+#: devices/forms.py:22
+msgid "12 hours"
+msgstr "12 heures"
+
+#: devices/forms.py:23
+msgid "24 hours"
+msgstr "24 heures"
+
+#: devices/forms.py:24
+msgid "1 day"
+msgstr "1 jour"
+
+#: devices/forms.py:28
+msgid "5 s"
+msgstr "5 s"
+
+#: devices/forms.py:29
+msgid "10 s"
+msgstr "10 s"
+
+#: devices/forms.py:30
+msgid "15 s"
+msgstr "15 s"
+
+#: devices/forms.py:31
+msgid "30 s"
+msgstr "30 s"
+
+#: devices/forms.py:32
+msgid "1 mn"
+msgstr "1 mn"
+
+#: devices/forms.py:33
+msgid "2 mn"
+msgstr "2 mn"
+
+#: devices/forms.py:34
+msgid "5 mn"
+msgstr "5 mn"
+
+#: devices/forms.py:35
+msgid "10 mn"
+msgstr "10 mn"
+
+#: devices/forms.py:36
+msgid "30 mn"
+msgstr "30 mn"
+
+#: devices/forms.py:40
+msgid "Since 1 minute"
+msgstr "Depuis 1 minute"
+
+#: devices/forms.py:41
+msgid "Since 5 minutes"
+msgstr "Depuis 5 minutes"
+
+#: devices/forms.py:42
+msgid "Since 10 minutes"
+msgstr "Depuis 10 minutes"
+
+#: devices/forms.py:43
+msgid "Since 15 minutes"
+msgstr "Depuis 15 minutes"
+
+#: devices/forms.py:44
+msgid "Since 30 minutes"
+msgstr "Depuis 30 minutes"
+
+#: devices/forms.py:45
+msgid "Since 1 hour"
+msgstr "Depuis 1 heure"
+
+#: devices/forms.py:46
+msgid "Since 3 hours"
+msgstr "Depuis 3 heures"
+
+#: devices/forms.py:47
+msgid "Since 6 hours"
+msgstr "Depuis 6 heures"
+
+#: devices/forms.py:48
+msgid "Since 12 hours"
+msgstr "Depuis 12 heures"
+
+#: devices/forms.py:49
+msgid "Since 24 hours"
+msgstr "Depuis 24 heures"
+
+#: devices/forms.py:50
+msgid "Since 2 days"
+msgstr "Depuis 2 jours"
+
+#: devices/forms.py:51
+msgid "Since 3 days"
+msgstr "Depuis 3 jours"
+
+#: devices/forms.py:52
+msgid "Since 4 days"
+msgstr "Depuis 4 jours"
+
+#: devices/forms.py:53
+msgid "Since 5 days"
+msgstr "Depuis 5 jours"
+
+#: devices/forms.py:54
+msgid "Since 6 days"
+msgstr "Depuis 6 jours"
+
+#: devices/forms.py:55
+msgid "Since a week"
+msgstr "Depuis 1 semaine"
+
+#: devices/forms.py:56
+msgid "Since 2 weeks"
+msgstr "Depuis 2 semaines"
+
+#: devices/forms.py:57
+msgid "Since 1 month"
+msgstr "Depuis 1 mois"
+
+#: devices/forms.py:61
+msgid "Lines"
+msgstr "Lignes"
+
+#: devices/forms.py:62
+msgid "Markers"
+msgstr "Marqueurs"
+
+#: devices/forms.py:63
+msgid "Lines + markers"
+msgstr "Lignes + Marqueurs"
+
+#: devices/forms.py:67
+msgid "Linear"
+msgstr "Linéaire"
+
+#: devices/forms.py:68
+msgid "Smooth line"
+msgstr "Ligne lisse"
+
+#: devices/forms.py:69
+msgid "V-H-V"
+msgstr "V-H-V"
+
+#: devices/forms.py:70
+msgid "H-V-H"
+msgstr "H-V-H"
+
+#: devices/forms.py:71
+msgid "V-H"
+msgstr "V-H"
+
+#: devices/forms.py:72
+msgid "H-V"
+msgstr "H-V"
+
+#: devices/forms.py:101 devices/templates/devices/plot/body.html:8
+msgid "Interval"
+msgstr "Intervale"
+
+#: devices/forms.py:102 devices/models.py:33
+#: devices/templates/devices/plot/body.html:7
+msgid "Figure"
+msgstr "Figure"
+
+#: devices/forms.py:103 devices/models.py:34
+#: devices/templates/devices/plot/body.html:9
+msgid "Frequency"
+msgstr "Fréquence"
+
+#: devices/forms.py:105 devices/templates/devices/plot/body.html:19
+msgid "Line mode"
+msgstr "Type de ligne"
+
+#: devices/forms.py:106 devices/models.py:38
+#: devices/templates/devices/plot/body.html:20
+msgid "Interpolation"
+msgstr "Interpolation"
+
+#: devices/forms.py:107 devices/templates/devices/plot/body.html:21
+msgid "Refresh"
+msgstr "Rafraîchir"
+
+#: devices/models.py:17
+msgid "Measurement unit"
+msgstr "Unité de mesure"
+
+#: devices/models.py:18 devices/models.py:77
+msgid "Unit"
+msgstr "Unité"
+
+#: devices/models.py:22
+msgid "Units"
+msgstr "Unités"
+
+#: devices/models.py:30
+msgid "Title"
+msgstr "Titre"
+
+#: devices/models.py:30
+msgid "Plot title"
+msgstr "Titre du tracé"
+
+#: devices/models.py:31
+msgid "X title"
+msgstr "Titre des X"
+
+#: devices/models.py:31
+msgid "Title for x axe"
+msgstr "Titre pour axe des x"
+
+#: devices/models.py:33
+msgid "Default figure data name (in mqtt message)"
+msgstr "Nom de donnée de la figure par défaut (dans le message mqtt)"
+
+#: devices/models.py:34
+msgid "Default frequency is seconds"
+msgstr "Fréquence par défaut en secondes"
+
+#: devices/models.py:35
+msgid "Refreshment"
+msgstr "Rafraîchir"
+
+#: devices/models.py:35
+msgid "Default refreshment in seconds"
+msgstr "Rafraîchissement par défaut en secondes"
+
+#: devices/models.py:36
+msgid "Date range"
+msgstr "Plage de dates"
+
+#: devices/models.py:36
+msgid "Default since date range"
+msgstr "Depuis la date par défaut"
+
+#: devices/models.py:37
+msgid "Line"
+msgstr "Ligne"
+
+#: devices/models.py:37
+msgid "Default line modes"
+msgstr "Modes de ligne par défaut"
+
+#: devices/models.py:38
+msgid "Default Interpolation mode"
+msgstr "Mode d'interpolation par défaut"
+
+#: devices/models.py:39
+msgid "Slider"
+msgstr "Curseur"
+
+#: devices/models.py:39
+msgid "Plotly slider view for plot"
+msgstr "Plotly curseur vue pour le tracé"
+
+#: devices/models.py:40
+msgid "Range selector"
+msgstr "Plage du sélecteur de rang"
+
+#: devices/models.py:40
+msgid "Plotly display range selector bar"
+msgstr "Plotly affiche la barre du sélecteur de rang"
+
+#: devices/models.py:41 devices/models.py:147 devices/models.py:276
+msgid "Active"
+msgstr "Actif"
+
+#: devices/models.py:56
+msgid "Plot"
+msgstr "Tracé"
+
+#: devices/models.py:57
+msgid "Plots"
+msgstr "Tracés"
+
+#: devices/models.py:65
+msgid "No Aggregation"
+msgstr "Aucun agrégation"
+
+#: devices/models.py:66
+msgid "Mean"
+msgstr "Moyenne"
+
+#: devices/models.py:67
+msgid "Median"
+msgstr "Médiane"
+
+#: devices/models.py:68
+msgid "Max"
+msgstr "Maximum"
+
+#: devices/models.py:69
+msgid "Min"
+msgstr "Minimum"
+
+#: devices/models.py:70
+msgid "Sum"
+msgstr "Somme"
+
+#: devices/models.py:71
+msgid "Count"
+msgstr "Total"
+
+#: devices/models.py:74
+msgid "Data type and description"
+msgstr "Type de données et description"
+
+#: devices/models.py:75
+msgid "Data label"
+msgstr "Label des données"
+
+#: devices/models.py:75
+msgid "Data label for plot"
+msgstr "Label des données pour le tracé"
+
+#: devices/models.py:76 devices/models.py:136
+msgid "Data name"
+msgstr "Nom des données"
+
+#: devices/models.py:76
+msgid "Data name in mqtt message"
+msgstr "Nom des données dans le message mqtt"
+
+#: devices/models.py:79
+msgid "Metric"
+msgstr "Métrique"
+
+#: devices/models.py:79
+msgid "Is data metric for plot"
+msgstr "Est ce une données métrique"
+
+#: devices/models.py:80
+msgid "Function"
+msgstr "Fonction"
+
+#: devices/models.py:80
+msgid "Function to apply"
+msgstr "Fonction à appliquer"
+
+#: devices/models.py:81 devices/templates/devices/device-box.html:42
+#: devices/templates/devices/device-list.html:14
+msgid "Chart"
+msgstr "Graphique"
+
+#: devices/models.py:81
+msgid "Chart color for plot"
+msgstr "Couleur du graphique pour le tracé"
+
+#: devices/models.py:82
+msgid "Annotation"
+msgstr "Annotation"
+
+#: devices/models.py:82
+msgid "Annotation color for plot"
+msgstr "Couleur des annotations pour le tracé"
+
+#: devices/models.py:83
+msgid "Gaps"
+msgstr "Lacunes"
+
+#: devices/models.py:83
+msgid "Connect gaps for plot"
+msgstr "Relier les lacunes pour le tracé"
+
+#: devices/models.py:100
+msgid "Field for plot"
+msgstr "Champ pour le tracé"
+
+#: devices/models.py:101
+msgid "Fields for plot"
+msgstr "Champs pour le tracé"
+
+#: devices/models.py:114 devices/templates/devices/camera/box.html:10
+#: devices/templates/devices/camera/box.html:20
+msgid "No"
+msgstr "Non"
+
+#: devices/models.py:115 devices/templates/devices/camera/box.html:11
+msgid "Continuous"
+msgstr "Continu"
+
+#: devices/models.py:116
+msgid "Detection for video"
+msgstr "Détection vidéo"
+
+#: devices/models.py:119
+msgid "Device name"
+msgstr "Nom de l'appareil"
+
+#: devices/models.py:120
+msgid "Sensor name"
+msgstr "Nom du capteur"
+
+#: devices/models.py:120
+msgid "Influxdb bucket and mqtt sensor (Unique max 64 chars long)"
+msgstr "Influxdb bucket et mqtt sensor (Unique maxi 64 chars long"
+
+#: devices/models.py:121
+msgid "Vendor name"
+msgstr "Nom du fabriquant"
+
+#: devices/models.py:122
+msgid "Device model id"
+msgstr "Id du model d'appareil"
+
+#: devices/models.py:123
+msgid "Device description"
+msgstr "Description de l'appareil"
+
+#: devices/models.py:125
+msgid "Device location"
+msgstr "Emplacement de l'appareil"
+
+#: devices/models.py:127
+msgid "Organisation"
+msgstr "Organisation"
+
+#: devices/models.py:127
+msgid "MQTT origine and Influxdb Organisation"
+msgstr "MQTT origine et Influxdb Organisation"
+
+#: devices/models.py:128
+msgid "Device uuid"
+msgstr "Uuid de l'appareil"
+
+#: devices/models.py:128
+msgid "Unique id device"
+msgstr "Id unique de l'appareil"
+
+#: devices/models.py:129
+msgid "Data format"
+msgstr "Format des données"
+
+#: devices/models.py:129
+msgid "MQTT data description in json format"
+msgstr "Description des données MQTT dans le format json"
+
+#: devices/models.py:130
+msgid "Data option"
+msgstr "Options des données"
+
+#: devices/models.py:130
+msgid "MQTT option description in json format"
+msgstr "Description des options MQTT dans le format json"
+
+#: devices/models.py:131
+msgid "Base topic"
+msgstr "Thèmes (topic) de base"
+
+#: devices/models.py:133
+msgid "Device IP or network address"
+msgstr "IP ou adresse de réseau de l'appareil"
+
+#: devices/models.py:134
+msgid "Supervisor service"
+msgstr "Service supervisor"
+
+#: devices/models.py:136
+msgid "List of data name to record in json format"
+msgstr "Liste des noms des données à enregistrer dans le format json"
+
+#: devices/models.py:137
+msgid "Influxdb tags"
+msgstr "Tags influxdb"
+
+#: devices/models.py:137
+msgid "Influxdb tags list in json format"
+msgstr "Liste de tags influxdb dans le format json"
+
+#: devices/models.py:138
+msgid "Data and description for plot"
+msgstr "Description des données pour le tracé"
+
+#: devices/models.py:139
+msgid "Record"
+msgstr "Enregistrement"
+
+#: devices/models.py:139
+msgid "Database recording mode"
+msgstr "Mode d'enregistrement dans la base de données"
+
+#: devices/models.py:142
+msgid "Display device"
+msgstr "Afficher l'appareil"
+
+#: devices/models.py:142
+msgid "Display device in dashboard"
+msgstr "Afficher l'appareil dans le tableau de bord"
+
+#: devices/models.py:143
+msgid "Default background"
+msgstr "Couleur du fond par défaut"
+
+#: devices/models.py:144
+msgid "Minimum width (px)"
+msgstr "Largeur mini  (px)"
+
+#: devices/models.py:145
+msgid "Minimum height (px)"
+msgstr "Hauteur mini (px)"
+
+#: devices/models.py:201 devices/models.py:240 devices/models.py:261
+#: devices/models.py:273
+msgid "Device"
+msgstr "Appareil"
+
+#: devices/models.py:227
+msgid "Master device"
+msgstr "Appareil maître"
+
+#: devices/models.py:228
+msgid "Linked device to master device"
+msgstr "Appareil lié à l'appareil maître"
+
+#: devices/models.py:232
+msgid "Linked device"
+msgstr "Appareil lié"
+
+#: devices/models.py:233
+msgid "Linked devices"
+msgstr "Appareils liés"
+
+#: devices/models.py:241
+msgid "Subscription"
+msgstr "Abonnement"
+
+#: devices/models.py:245
+msgid "Topic subscription"
+msgstr "Thème abonnement"
+
+#: devices/models.py:246
+msgid "Topics subscription"
+msgstr "Thèmes abonnement"
+
+#: devices/models.py:255
+msgid "Periodic task"
+msgstr "Tâches périodiques"
+
+#: devices/models.py:256
+msgid "Select an exixting task"
+msgstr "Sélectionnez une tâche existante"
+
+#: devices/models.py:268
+msgid "Periodic task per device"
+msgstr "Tâche périodique par appareil"
+
+#: devices/models.py:269
+msgid "Periodics tasks per device"
+msgstr "Tâches périodiques par appareil"
+
+#: devices/models.py:274
+msgid "Short description"
+msgstr "Courte description"
+
+#: devices/models.py:275
+msgid "Module class"
+msgstr "Classe du module"
+
+#: devices/models.py:275
+msgid "Python module class"
+msgstr "Classe du module en python"
+
+#: devices/models.py:280
+msgid "Device processing module"
+msgstr "Modules de processus de périphérique"
+
+#: devices/models.py:281
+msgid "Devices processing module"
+msgstr "Module de processus de périphérique"
+
+#: devices/modules/plotlib.py:32
+msgid "d"
+msgstr "j"
+
+#: devices/modules/plotlib.py:33
+msgid "All"
+msgstr "Tout"
+
+#: devices/modules/processing.py:167
+msgid "on"
+msgstr "I"
+
+#: devices/modules/processing.py:167
+msgid "off"
+msgstr "O"
+
+#: devices/tasks.py:30
+msgid "Device set recording on"
+msgstr "Démarrer l'enregistrement de l'appareil"
+
+#: devices/tasks.py:36
+msgid "Device set recording off"
+msgstr "Arrêt de l'enregistrement de l'appareil"
+
+#: devices/tasks.py:42
+msgid "Device switch on"
+msgstr "Ouvre interrupteur"
+
+#: devices/tasks.py:47
+msgid "Device switch off"
+msgstr "Ferme interrupteur"
+
+#: devices/tasks.py:52
+msgid "Device switch toggle"
+msgstr "Interrupteur bascule"
+
+#: devices/tasks.py:57
+msgid "Device relay switch close"
+msgstr "Relai ferme"
+
+#: devices/tasks.py:62
+msgid "Device relay switch open"
+msgstr "Relai ouvre"
+
+#: devices/tasks.py:67
+msgid "Device relay switch stop"
+msgstr "Relai stop"
+
+#: devices/tasks.py:72
+msgid "Device relay switch toggle"
+msgstr "Relai bascule"
+
+#: devices/templates/devices/camera-box.html:5
+#: devices/templates/devices/camera/replay/box-replay.html:6
+msgid "Remove camera"
+msgstr "Supprimer la caméra"
+
+#: devices/templates/devices/camera/box.html:5
+msgid "Frame/s"
+msgstr "Images/s"
+
+#: devices/templates/devices/camera/box.html:6
+msgid "Zoom"
+msgstr "Zoom"
+
+#: devices/templates/devices/camera/box.html:7
+msgid "Rotation"
+msgstr "Rotation"
+
+#: devices/templates/devices/camera/box.html:8
+#: devices/templates/devices/camera/box.html:47
+msgid "Recording"
+msgstr "Enregistrement"
+
+#: devices/templates/devices/camera/box.html:12
+msgid "Detection"
+msgstr "Détection"
+
+#: devices/templates/devices/camera/box.html:18
+msgid "Detection outline"
+msgstr "Ligne de Détection"
+
+#: devices/templates/devices/camera/box.html:21
+msgid "Yes"
+msgstr "Oui"
+
+#: devices/templates/devices/camera/box.html:25
+msgid "Mqtt server"
+msgstr "Serveur mqtt"
+
+#: devices/templates/devices/camera/box.html:27
+msgid "Local"
+msgstr "Local"
+
+#: devices/templates/devices/camera/box.html:28
+msgid "Vpn"
+msgstr "Vpn"
+
+#: devices/templates/devices/camera/box.html:29
+msgid "Public"
+msgstr "Public"
+
+#: devices/templates/devices/camera/box.html:32
+msgid "Save"
+msgstr "Sauver"
+
+#: devices/templates/devices/camera/replay/box-replay.html:21
+msgid "Reset or stop"
+msgstr "Relancer ou stopper"
+
+#: devices/templates/devices/camera/replay/box-replay.html:23
+msgid "Play or pause"
+msgstr "Jouer ou pause"
+
+#: devices/templates/devices/camera/replay/box-replay.html:26
+#: devices/templates/devices/camera/replay/js-replay.html:7
+msgid "ready"
+msgstr "Prêt"
+
+#: devices/templates/devices/camera/replay/box-replay.html:27
+msgid "fps"
+msgstr "fps"
+
+#: devices/templates/devices/camera/replay/box-replay.html:29
+msgid "Auto"
+msgstr "Auto"
+
+#: devices/templates/devices/camera/replay/js-replay.html:5
+msgid "in progress"
+msgstr "En marche"
+
+#: devices/templates/devices/camera/replay/js-replay.html:6
+msgid "finished"
+msgstr "Terminé"
+
+#: devices/templates/devices/device-box.html:6
+msgid "Remove window"
+msgstr "Enlever la fenêtre"
+
+#: devices/templates/devices/device-box.html:20
+msgid "Periodic tasks"
+msgstr "Tâches périodiques"
+
+#: devices/templates/devices/double_switch/box.html:6
+msgid "Down"
+msgstr "Descente"
+
+#: devices/templates/devices/double_switch/box.html:7
+msgid "Up"
+msgstr "Montée"
+
+#: devices/templates/devices/linky/box.html:5
+#: devices/templates/devices/linky/list.html:9
+msgid "Price"
+msgstr "Tarif"
+
+#: devices/templates/devices/linky/box.html:6
+#: devices/templates/devices/linky/list.html:5
+msgid "Power"
+msgstr "Puissance"
+
+#: devices/templates/devices/linky/box.html:7
+#: devices/templates/devices/linky/list.html:6
+msgid "Intensity"
+msgstr "Intensité"
+
+#: devices/templates/devices/plot-device.html:12
+msgid "Active Plots"
+msgstr "Tracés Actifs"
+
+#: devices/templates/devices/plot-device.html:17
+msgid "Plot th graph"
+msgstr "Tracer le graphique"
+
+#: devices/templates/devices/sin_4_rs_20/box.html:6
+msgid "State"
+msgstr "Etat"
+
+#: devices/templates/devices/sin_4_rs_20/box.html:16
+msgid "Position"
+msgstr "Position"
+
+#: devices/templates/devices/sin_4_rs_20/box.html:20
+msgid "Tilt"
+msgstr "Inclinaison"
+
+#: devices/templates/devices/solarmax/box.html:15
+#: devices/templates/devices/solarmax/list.html:11
+msgid "maxi"
+msgstr "maxi"
+
+#: devices/templates/devices/solarmax/box.html:16
+#: devices/templates/devices/solarmax/list.html:12
+msgid "this day"
+msgstr "ce jour"

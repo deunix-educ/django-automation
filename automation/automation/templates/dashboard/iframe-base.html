@@ -1,0 +1,5 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h3 class="w3-panel  w3-center">{{ device.name }}</h3>
+<iframe height="900" width="100%" src="http://{{ device.ip }}:9001" style="border:none;"></iframe>
+{% endblock %}

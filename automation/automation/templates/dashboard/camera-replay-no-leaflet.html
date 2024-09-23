@@ -1,0 +1,58 @@
+{% extends 'board-base.html' %}
+{% load i18n apptags boardtags %}
+ {% block menubar %}{% endblock  %}
+{% block filters %}{% include 'dashboard/location-filter-inc.html' %}{% endblock %}
+{% block content %}
+<div>
+    <div class="left-side w3-dark-medium w3-padding-2">
+		<div class="w3-row">
+		    <div class="w3-col s6">{% trans 'Start date' %}<br>{{ form.start_date }}</div>
+		    <div class="w3-col s6">{% trans 'End date' %}<br>{{ form.end_date }}</div>
+		</div>   
+    </div>   
+    <div id="left-side-click" class="_click-border"></div>
+    <div class="w3-flex-container-center w3-padding-2">
+    {% for device in devices %}
+        {% concat 'devices/' device.sensor '/replay/box-replay.html' as template %}
+        {% include template %}
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}
+{% block message_controller %}
+    <script>
+        function onMessageController(mqtt, args, payload) {
+            try {
+                switch (args.uuid) {
+                    {% for device in devices %}
+                    {% case_control_function device.uuid 'replay' %}
+                    {% endfor %}
+                }
+            } catch(e) { console.log("onMessageController-------------------", e);  }
+        }
+        function controller(payload) {
+            $.post("/controller/", {payload:payload} ).done(function(r) {
+                //console.log(r);
+            });
+        }
+        mqttcInit();
+    </script>  
+{% endblock %}
+{% block js_footer %}
+    <script>
+	let slide_w = "400px";
+	let slide_id = $('div.left-side');
+	function search_open()       { slide_id.css("width", slide_w).css("display", "block");}
+	function search_close()      { slide_id.css("width", "0px").css("display", "none"); }
+	function search_toggle()     { slide_id.css('display')=='none' ? search_open(): search_close(); }
+	search_open();
+	$('#left-side-click').click(function(e) { if( (e.offsetX)<=parseInt($(this).css('border-left-width'))) { search_toggle(); } }); 
+    var defaultLat  = toFloat("{{ request.user.homesite.lat }}", 6);
+    var defaultLon  = toFloat("{{ request.user.homesite.lon }}", 6);
+    var minZoom     = parseInt("{{ request.user.homesite.min_zoom }}");
+    var maxZoom     = parseInt("{{ request.user.homesite.max_zoom }}");  
+    </script>
+    {{ block.super }}
+{% endblock %}
+
+

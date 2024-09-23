@@ -1,0 +1,51 @@
+{% extends 'devices/camera-box.html' %}
+{% load i18n apptags boardtags %}
+{% block box_menu %}
+    <div class="w3-dropdown-content w3-bar-block w3-border" style="width:240px; right:0.1em">
+        <div class="w3-bar-item">{% trans 'Frame/s' %} <input id="fps-{{ device.uuid }}" class="w3-right" type="number" min="1" max="25" step="1" /></div>
+        <div class="w3-bar-item">{% trans 'Zoom' %}<input id="zoom-{{ device.uuid }}" class="w3-right" type="number" min="0.10" max="2" step="0.05" /></div>
+        <div class="w3-bar-item">{% trans 'Rotation' %}<input id="rotate-{{ device.uuid }}" class="w3-right" type="number" min="0" max="380" step="90" /></div>
+        <div class="w3-bar-item">{% trans 'Recording' %}&nbsp;&nbsp;
+            <select id="record-{{ device.uuid }}" class="w3-right">
+                <option value="0">{% trans 'No' %}</option>
+				<option value="1">{% trans 'Continuous' %}</option>
+				<option value="2">{% trans 'Detection' %}</option>
+			</select>
+			<input type="hidden" id="mobile-{{ device.uuid }}">
+        </div>
+        {% from_dict device.get_options 'mobile' as is_mobile %}
+        {% if is_mobile == "false" %}
+        <div class="w3-bar-item">{% trans 'Detection outline' %}&nbsp;&nbsp;
+            <select id="contour-{{ device.uuid }}" class="w3-right">
+                <option value="0">{% trans 'No' %}</option>
+                <option value="1">{% trans 'Yes' %}</option>
+            </select>
+        </div>
+        {% endif %}
+        <div class="w3-bar-item">{% trans 'Mqtt server' %}&nbsp;&nbsp;
+            <select id="mqtt-{{ device.uuid }}" class="w3-right">
+                <option value="local">{% trans 'Local' %}</option>
+                <option value="private">{% trans 'Vpn' %}</option>
+                <option value="public">{% trans 'Public' %}</option>
+            </select>
+        </div>       
+        <div class="w3-bar-item"><a href="#" class="w3-button w3-block w3-teal w3-right w3-padding-0" onclick="video_save_params('{{ device.uuid }}')">{% trans 'Save' %}</a></div>
+        <div class="w3-bar-item">
+             <b class="w3-small">(<span class="lat-{{ device.uuid }}"></span>,&nbsp;<span class="lon-{{ device.uuid }}"></span>)</b>       
+        </div>
+    </div>
+{% endblock %}
+{% block box_detail %}
+    <div class="w3-center">
+        <img class="jpeg-{{ device.uuid }} w3-image cursor-pointer jpeg" onclick="videoPreview('jpeg-{{ device.uuid }}')" style="z-index:100;">
+    </div>
+    <div class="w3-cell-row w3-dark-medium w3-small">
+        <div class="w3-cell w3-text-orange">
+            {% button_play_pause btn=device.uuid js='onclick="video_controller($(this))"' %}
+            <span class="count-{{ device.uuid }}"></span>
+         
+            <span class="record-{{ device.uuid }} w3-text-pink w3-right w3-padding-1 w3-large cursor-pointer" title="{% trans 'Recording' %}"><i class="fa-solid fa-compact-disc"></i></span>
+        </div>
+    </div>
+    {% load_js_script 'devices/camera/js.html' %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'layout-board.html' %}
+{% block js_header %}
+    {{ block.super }}
+    <script src="/static/devices/plotly/plotly-cartesian.min.js"></script>
+    <script src="/static/devices/plotly/plotly-locale-fr.js"></script>
+{% endblock %}
+{% block content %}
+    <div class="w3-container">
+    {% include 'devices/plot/body.html' %}
+    </div>
+{% endblock %}
+{% block js_footer %}
+    {{ block.super }}
+	{% include 'devices/plot/plot-js.html' %}
+{% endblock %}

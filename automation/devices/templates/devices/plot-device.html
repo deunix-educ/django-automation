@@ -1,0 +1,30 @@
+{% extends 'board.html' %}
+{% load i18n %}
+{% block js_header %}
+	{{ block.super }}
+	<script src="/static/devices/plotly/plotly-cartesian.min.js"></script>
+	<script src="/static/devices/plotly/plotly-locale-fr.js"></script>   
+{% endblock %}
+{% block content %}
+	<div class="w3-container">
+        <form id="_plot_dev" class="w3-padding-1" action="" method="post">
+            {% csrf_token %}
+            <h3><i class="fa-solid fa-chart-area w3-text-blue"></i> {% trans 'Active Plots' %}</h3>
+		    {% for dev in devices %}
+		    <input class="w3-radio" type="radio" name="devid" value="{{ dev.id }}" {% if devid == dev.id %}checked{% endif %}>&nbsp;<label>{{ dev.name }}</label>&nbsp;		    
+		    {% endfor %}
+		    <br>
+            <input type="submit" class="w3-button w3-blue-grey w3-margin-top-2" value="{% trans 'Plot th graph' %}" />	                 
+        </form>
+        <div id="_plot_click" class="_click-line"></div>       
+        {% include 'devices/plot/body.html' %}
+	    <script>
+	    $('#_plot_click').click(function(e) { if( (e.offsetY)<=parseInt($(this).css('border-bottom-width'))) { $('#_plot_dev').toggle(); } });
+	    </script>
+	</div>
+{% endblock %}
+{% block js_footer %}
+	{{ block.super }}
+	{% include 'devices/plot/plot-js.html' %}
+{% endblock %}
+

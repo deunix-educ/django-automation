@@ -1,0 +1,20 @@
+{% load i18n apptags %}
+<div id="_loc-filter" class="w3-cell-row w3-margin-0">
+    <div class="w3-cell w3-cell-top w3-bar">
+	    {% for item in located %}       
+	    {% in_charlist location_checked item.id as checked%}
+	    <span class="w3-bar-item">{% check_pk 'located' item.id checked %} {{ item.name }}</span>
+	    {% endfor %}
+        <span class="w3-bar-item">
+            {% trans 'Reset / All' as rst_all %}
+            {% check_all 'located' title=rst_all %}
+        </span>	    
+    </div>
+    <div class="w3-cell w3-cell-middle">
+        <button type="submit" class="w3-button w3-large w3-teal w3-margin w3-padding-small" title="{% trans 'Modify locations' %}">{% trans 'Modify' %}</button>
+    </div>
+</div>
+<div id="loc-filter-click" class="_click-line"></div>
+<script>
+$('#loc-filter-click').click(function(e) { if( (e.offsetY)<=parseInt($(this).css('border-bottom-width'))) { $('#_loc-filter').toggle(); } });
+</script>

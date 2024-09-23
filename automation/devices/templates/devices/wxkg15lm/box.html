@@ -1,0 +1,13 @@
+{% extends "devices/device-box.html" %}
+{% load i18n boardtags %}
+{% block box_data %}
+    <div class="w3-cell w3-cell-top w3-padding-small">
+        <div><i class="fa-solid fa-triangle-exclamation w3-text-orange"></i> <span class="action-{{ device.uuid }}"></span></div>
+        <div><i class="fa-solid fa-signal w3-text-amber"></i> <span class="linkquality-{{ device.uuid }}"></span></div>
+        <div><i class="fa-solid fa-battery-three-quarters w3-text-amber"></i> <span class="battery-{{ device.uuid }}"></span></div>
+    </div>
+{% endblock %}
+{% block box_js %}
+    {% load_js_script "devices/wxkg15lm/js.html" %}
+{% endblock %}
+

@@ -1,0 +1,35 @@
+{% extends 'board.html' %}
+{% load apptags boardtags %}
+
+{% block js_header %}
+    {{ block.super }}
+    <script src="/static/js/mqttws31.js"></script>
+    <script src="/static/js/base64.js"></script>
+    <script src="/static/app/mqttclient.js"></script>
+{% endblock %}
+
+{% block js_footer %}
+    {{ block.super }}
+	<script src="/static/app/board.js"></script>
+	{% block message_controller %}
+	<script>
+	    function onMessageController(mqtt, args, payload) {
+	        try {
+		        switch (args.uuid) {
+		            {% for device in devices %}
+		            {% case_control_function device.uuid device.sensor %}
+		            {% endfor %}
+		        }
+		    } catch(e) {
+		        console.log("onMessageController", e);
+		    }
+		}
+		function controller(payload) {
+	        $.post("/controller/", {payload:payload} ).done(function(r) {
+	            //console.log(r);
+	        });
+		}
+	    mqttcInit("{% url 'mqtt_init' %}");
+    </script>
+    {% endblock %}
+{% endblock %}

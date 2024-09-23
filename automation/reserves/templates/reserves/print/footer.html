@@ -1,0 +1,14 @@
+{% load i18n %}
+
+<div id="footerContent">
+    <hr>
+	<table class="fnt10">
+	    <tr>
+	        <td>
+	        {% if request.user.photo %}<img src="{{ request.user.photo.url }}" alt="" height="32px">{% endif %}
+	        &nbsp;&nbsp;{{ request.user.username }}
+	        </td>
+	        <td class="text-right">{{ title }} - page <pdf:pagenumber>  / <pdf:pagecount> </td>
+	    </tr>
+	</table>
+</div>

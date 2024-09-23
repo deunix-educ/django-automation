@@ -1,0 +1,44 @@
+<script>
+    function audio_payload(uuid) {
+        return {
+            channels: $("#channels-" + uuid).val(),
+            rate: $("#rate-" + uuid).val(),
+            rec: $("#record-" + uuid).val(),
+            duration: $("#duration-" + uuid).val()
+        };
+    }
+     
+    function audio_params(uuid) {
+        sendMqttMessage(uuid, '/set/save', audio_payload(uuid));
+    }
+       
+    function audio_controller(id) {
+        sendMqttMessage(uuidFromBtn(id), +'/set/toggle', {});
+    }
+    
+    function audio_display_params(args, payload) {
+        $("#channels-" + args.uuid).val(payload.channels);
+        $("#rate-" + args.uuid).val(payload.rate);
+        $("#record-" + args.uuid).val(payload.rec);
+        $("#duration-" + args.uuid).val(payload.duration);
+        setBtnPlayPause(payload.state, args.uuid);
+    }
+
+    function audioControl(mqtt, args, payload) {
+        if (args.evt.endsWith("wav")) {
+            var snd = document.getElementById("snd-"+args.uuid);
+            snd.src = 'data:audio/wav;base64,' + bytesToBase64(payload);
+            snd.play();
+            $("span.count-"+args.uuid).text(args.counter);
+            $("span.ts-"+args.uuid).text(to_localeDate(args.ts));
+            $("span.lat-"+args.uuid).text(args.lat != 'NaN' ? args.lat: '');
+            $("span.lon-"+args.uuid).text(args.lon != 'NaN' ? args.lon: '');
+            return;
+        } else if (args.evt=="report") {
+            var opts = JSON.parse(payload.options);
+            $.extend(payload, opts);
+            audio_display_params(args, payload);
+        }
+    }
+</script>
+

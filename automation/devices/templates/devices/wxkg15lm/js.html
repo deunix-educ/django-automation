@@ -1,0 +1,22 @@
+<script>
+    var actions = {
+        "hold_right": "Droit relaché",
+        "hold_left": "Gauche relaché",
+        "double_right": "Double droit",
+        "double_left": "Double gauche",
+        "single_left": "Simple gauche",
+        "single_right": "Simple droit",
+        "single_both": "Simple deux",
+        "double_both": "Double deux",
+        "triple_right": "Triple droit",
+        "triple_left": "Triple gauche",
+        "triple_both": "Triple deux",
+    }
+       
+    function wxkg15lmControl(mqtt, args, payload) {   
+        $("span.ts-"+args.uuid).text(to_localeDateMillisecond( tsNow() ));
+        $("span.action-"+args.uuid).text(actions[payload.action]); 
+        $("span.linkquality-"+args.uuid).text( parseInt(payload.linkquality) );
+        $("span.battery-"+args.uuid).text( parseInt(payload.battery) );     
+    }
+</script>

@@ -1,0 +1,17 @@
+{% extends "devices/device-list.html" %}
+{% load i18n boardtags %}
+
+{% block list_detail %}
+    <div class=" w3-cell-top w3-padding-small w3-mobile w3-w25">
+        <audio id="snd-{{ device.uuid }}" controls></audio>
+    </div>
+    
+    <div class="w3-cell w3-cell-top w3-padding-small w3-mobile w3-w25">
+        <i class="fa-solid fa-globe w3-text-amber"></i>: <span class="lat-{{ device.uuid }}"></span>&nbsp;<span class="lon-{{ device.uuid }}"></span><br>
+        <i class="fa-regular fa-image w3-text-amber"></i>: <span id="count-{{ device.uuid }}"></span><br>
+        <b class="w3-text-amber">N°</b>: <span class="count-{{ device.uuid }}"></span><br>
+        {% button_play_pause btn=device.uuid js='onclick="audio_controller($(this))"' %}
+    </div>
+    {% load_js_script 'devices/audio/js.html' %}
+{% endblock %}
+

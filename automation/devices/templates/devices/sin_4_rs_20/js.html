@@ -1,0 +1,33 @@
+<script>
+    function sin_4_rs_20State(id) {
+        var uuid = uuidFromBtn(id);
+        sendMqttMessage(uuid, '/set', {state: id.val()});
+    }
+    
+    function sin_4_rs_20Pos(id) {
+        var uuid = uuidFromBtn(id);
+        sendMqttMessage(uuid, '/set', {position: parseInt(id.val())});
+    }
+    
+    function sin_4_rs_20Tilt(id) {
+        var uuid = uuidFromBtn(id);
+        sendMqttMessage(uuid, '/set', {tilt: parseInt(id.val())});
+    }
+    
+    function setBgBtn(uuid, btn) {
+        $("button."+ uuid).removeClass('w3-blue');
+        $("#"+ btn.toLowerCase() +"-"+ uuid).addClass('w3-blue');
+    }
+    
+    function sin_4_rs_20Control(mqtt, args, payload) {
+        $("span.ts-"+args.uuid).text(to_localeDateMillisecond( tsNow() ));
+        $("span.linkquality-"+args.uuid).text( parseInt(payload.linkquality) );
+        $("#state-"+args.uuid).val(payload.state); 
+        if (payload.position)
+            $("#pos-"+args.uuid).val( parseInt(payload.position));
+        if (payload.tilt) 
+            $("#tilt-"+args.uuid).val( parseInt(payload.tilt) );
+        setBgBtn(args.uuid, payload.state);
+    }
+    
+</script>

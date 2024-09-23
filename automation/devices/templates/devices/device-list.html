@@ -1,0 +1,25 @@
+{% load i18n boardtags apptags %}
+<div class="w3-cell w3-cell-top w3-mobile ">
+    <h6 class="w3-cell w3-cell-top w3-mobile w3-w100 w3-text-deep-orange">{{ device.location.name|upper }}</h6>
+</div>
+<div id="{{ device.uuid }}" class="w3-cell-row w3-padding-1 {{ device.bg }} w3-nbsp w3-border-bottom">
+    <div class="w3-cell w3-cell-top w3-mobile w3-center w3-w00">
+        <a href="{% url 'device_by_pid' page='default' pid=device.id %}" class="w3-button w3-padding-1 w3-margin-0">
+            <b class="w3-medium">{{ device.name }}</b><br>
+            <img src="{{ device.image.url }}" height="48px" title="{{ device.uuid }}">
+        </a>
+        {% if device.plot.active %}
+        {% url 'devices:graph_plot_by_id' pid=device.id as ifurl %}
+        <br>
+        <button class="w3-button w3-circle w3-transparent w3-margin-1" onclick="plotModal('{{ ifurl }}', '{{ device.plot.title }}')" title="{% trans 'Chart' %}">
+           <i class="fa-solid fa-chart-line w3-text-red"></i>
+        </button>
+        {% endif %}
+    </div>
+    {% block list_detail %}{% endblock %}
+    <div class="w3-cell w3-cell-top w3-padding-small w3-mobile">
+        <span class=""><i class="fa-solid fa-clock w3-text-orange"></i> <span class="ts-{{ device.uuid }}"></span></span><br>
+        <span class="cursor-pointer" title="N° Identité"><i class="fa-brands fa-hashnode w3-text-cyan"></i> <span> {{ device.uuid }}</span></span><br>
+        <span class="cursor-pointer" title="Adresse réseau"><i class="fa-solid fa-globe w3-text-cyan"></i> <span> {{ device.ip }}</span></span>
+    </div>
+</div>

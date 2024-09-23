@@ -1,0 +1,27 @@
+
+	<script>
+		var status_codes = {
+		    20000: "Communication nulle",
+		    20001: "En marche",
+		    20002: "Peu de rayonnement",
+		    20003: "Démarrage",
+		    20004: "Opération sur MPP",
+		    20005: "Ventilateur tourne",
+		    20006: "Puissance maximale",
+		    20007: "Limite température",
+		    20008: "Sur secteur"
+		}
+		function solarmaxControl(mqtt, args, p) {
+		    $("span.ts-"+args.uuid).text(to_localeDateMillisecond(p.time));
+		    $("span.ivmax").text(p.ivmax);
+		    $("span.inv").text( p.inv);
+		    $("span.pac").text( parseFloat(p.pac).toFixed(1) );
+		    $("span.pdc").text( parseFloat(p.pdc).toFixed(1) );
+		    $("span.eac").text( parseInt(p.eac) );
+		    $("span.edc").text( parseInt(p.edc) );
+		    $("span.tmpr").text( parseInt(p.tmpr) );
+		    $("span.qdy").text( parseFloat(p.qdy).toFixed(1) );
+		    $("span.stat").text( status_codes[parseInt(p.stat)] );
+		}
+	</script>
+

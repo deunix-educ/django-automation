@@ -1,0 +1,228 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-13 09:13+0200\n"
+"PO-Revision-Date: 2024-09-04 09:26+0200\n"
+"Last-Translator: Denis  <denis.defolie@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.10.0\n"
+
+#: reserves/admin.py:26 reserves/models.py:42 reserves/models.py:49
+#: reserves/models.py:54
+msgid "Product type"
+msgstr "Type de produit"
+
+#: reserves/admin.py:37 reserves/models.py:56
+msgid "Product image"
+msgstr "Image du produit"
+
+#: reserves/admin.py:41 reserves/models.py:133
+msgid "Storage places"
+msgstr "Emplacement du stockage"
+
+#: reserves/admin.py:45 reserves/forms.py:31 reserves/forms.py:166
+#: reserves/models.py:66 reserves/models.py:75
+#: reserves/templates/reserves/stock-list.html:40
+msgid "Product"
+msgstr "Produit"
+
+#: reserves/admin.py:52 reserves/forms.py:54 reserves/forms.py:133
+#: reserves/models.py:34 reserves/templates/reserves/stock-list.html:55
+msgid "Packaging"
+msgstr "Emballage"
+
+#: reserves/apps.py:8
+msgid "Reserves in stock"
+msgstr "Réserves dans le stock"
+
+#: reserves/filters.py:19 reserves/models.py:146
+#: reserves/templates/reserves/order-print.html:16
+#: reserves/templates/reserves/stock-list.html:10
+msgid "Stock"
+msgstr "Stock"
+
+#: reserves/filters.py:22 reserves/forms.py:60
+msgid "Alert product"
+msgstr "Produit en alerte"
+
+#: reserves/filters.py:26 reserves/forms.py:81
+msgid "Product to order"
+msgstr "Produit à commander"
+
+#: reserves/filters.py:30 reserves/filters.py:38 reserves/forms.py:67
+msgid "Removed product"
+msgstr "Produit retiré"
+
+#: reserves/filters.py:34 reserves/forms.py:74
+msgid "Expired product"
+msgstr "Produit expiré"
+
+#: reserves/forms.py:12 reserves/forms.py:25 reserves/forms.py:26
+#: reserves/forms.py:32 reserves/forms.py:40
+msgid "All"
+msgstr "Tout"
+
+#: reserves/forms.py:39
+msgid "Type"
+msgstr "Type"
+
+#: reserves/forms.py:47 reserves/forms.py:126 reserves/models.py:20
+msgid "Location"
+msgstr "Emplacement"
+
+#: reserves/forms.py:89
+msgid "Years"
+msgstr "Années"
+
+#: reserves/models.py:14
+msgid "Location name"
+msgstr "Nom de l'emplacement du stock"
+
+#: reserves/models.py:16 reserves/models.py:30 reserves/models.py:62
+msgid "Active"
+msgstr "Actif"
+
+#: reserves/models.py:28
+msgid "Packaging name"
+msgstr "Nom de l'emballage"
+
+#: reserves/models.py:35 reserves/models.py:135
+msgid "Packagings"
+msgstr "Emballages"
+
+#: reserves/models.py:55 reserves/templates/reserves/order-print.html:15
+msgid "Product name"
+msgstr "Nom du produit"
+
+#: reserves/models.py:58
+msgid "Quantity"
+msgstr "Quantité"
+
+#: reserves/models.py:58
+msgid "Packaging quantity"
+msgstr "Quantité conditionnement"
+
+#: reserves/models.py:59
+msgid "Unity"
+msgstr "Unité"
+
+#: reserves/models.py:59
+msgid "Packaging unit"
+msgstr "Unité de conditionnement"
+
+#: reserves/models.py:60
+msgid "Minimum stock"
+msgstr "Stock minimum"
+
+#: reserves/models.py:61
+msgid "Quantity order"
+msgstr "Quantité à la commande"
+
+#: reserves/models.py:61
+msgid "Quantity to order. 0 == no order"
+msgstr "Quantité à la commande. 0 == pas de commande"
+
+#: reserves/models.py:67 reserves/models.py:132
+msgid "Products"
+msgstr "Produits"
+
+#: reserves/models.py:131
+msgid "Creation date"
+msgstr "Date de création"
+
+#: reserves/models.py:134 reserves/templates/reserves/stock-list.html:53
+msgid "Range"
+msgstr "Rangée"
+
+#: reserves/models.py:136
+msgid "Expiry date in days"
+msgstr "Date d'expiration en jours"
+
+#: reserves/models.py:138
+msgid "Amount"
+msgstr "Quantité"
+
+#: reserves/models.py:139 reserves/templates/reserves/stock-list.html:37
+msgid "Stocked"
+msgstr "Stocké"
+
+#: reserves/models.py:140 reserves/templates/reserves/order-print.html:17
+msgid "On order"
+msgstr "En commande"
+
+#: reserves/models.py:147 reserves/templates/reserves/product-add.html:26
+#: reserves/templates/reserves/product-edit.html:27
+msgid "Stocks"
+msgstr "Stocks"
+
+#: reserves/templates/reserves/order-print.html:5 reserves/views.py:59
+msgid "Order list"
+msgstr "Liste commande"
+
+#: reserves/templates/reserves/product-add.html:21
+#: reserves/templates/reserves/stock-list.html:24
+msgid "Create"
+msgstr "Créer"
+
+#: reserves/templates/reserves/product-edit.html:22
+msgid "Update"
+msgstr "Modifier"
+
+#: reserves/templates/reserves/stock-list.html:16
+msgid "Print"
+msgstr "Imprimer"
+
+#: reserves/templates/reserves/stock-list.html:38
+msgid "Date"
+msgstr "Date"
+
+#: reserves/templates/reserves/stock-list.html:43
+msgid "Stock edit"
+msgstr "Modifier le stock"
+
+#: reserves/templates/reserves/stock-list.html:49
+msgid "Order"
+msgstr "Commande"
+
+#: reserves/templates/reserves/stock-list.html:59
+msgid "Pull"
+msgstr "Sortir"
+
+#: reserves/templates/reserves/stock-list.html:62
+msgid "Rest"
+msgstr "Reste"
+
+#: reserves/templates/reserves/stock-list.html:63
+msgid "Add"
+msgstr "Ajouter"
+
+#: reserves/templates/reserves/stock-list.html:67
+msgid "Expired"
+msgstr "Expiré"
+
+#: reserves/templates/reserves/stock-list.html:69
+msgid "Alert"
+msgstr "Alerte"
+
+#: reserves/views.py:59
+msgid "Order pdf attached"
+msgstr "Commande pdf attachée"
+
+#: reserves/views.py:76
+msgid "order-list"
+msgstr "liste-commande"
+
+#~ msgid "Ordereded"
+#~ msgstr "En commande"

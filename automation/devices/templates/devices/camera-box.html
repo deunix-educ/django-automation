@@ -1,0 +1,22 @@
+{% load i18n boardtags %}
+<div id="{{ device.uuid }}" class="w3-card-4 w3-border w3-margin-1 w3-nbsp w3-dark-low box" style="min-width:{{ device.width }}px;">
+    <div class="w3-cell-row w3-text-amber w3-dark-xlight">
+        <div class="w3-cell w3-cell-center">
+            &nbsp;<button onclick="$('#'+'{{ device.uuid }}').remove()" class="w3-btn w3-no-padding w3-large" title="{% trans 'Remove camera' %}">
+                <i class="fa-regular fa-circle-xmark w3-text-red"></i>
+            </button>         
+        </div>    
+		<div class="w3-cell w3-cell-top">{{ device.name }}</div>
+        <div class="w3-cell w3-small w3-cell-top w3-right-align">        
+            <span class="ts-{{ device.uuid }}"></span>&nbsp;<i class="fa-solid fa-clock w3-text-orange w3-padding-1"></i><br>
+            <span>{{ device.ip }}</span>&nbsp;<i class="fa-solid fa-globe w3-text-cyan w3-padding-1"></i>
+        </div>
+        {% if request.user.is_superuser %}
+        <div class="w3-cell w3-dropdown-hover">
+            <button class="w3-btn w3-no-padding"><i class="fa-solid fa-bars w3-text-amber w3-large"></i></button>
+            {% block box_menu %}{% endblock %}
+        </div>       
+        {% endif %}
+    </div>
+	{% block box_detail %}{% endblock %}
+</div>

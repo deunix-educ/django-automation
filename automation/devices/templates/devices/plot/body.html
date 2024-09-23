@@ -1,0 +1,30 @@
+{% load i18n %}
+{% if device %}
+    <h3><i class="fa-solid fa-image w3-text-amber"></i> {{ device.plot.title }}</h3>
+    <div id="_plot_filter" class="w3-cell-row w3-dark-light">
+        <div class="w3-cell">
+            <div class="w3-bar">
+                <div class="w3-bar-item"><i class="fa-solid fa-images w3-text-amber"></i> <b>{% trans 'Figure' %}</b><br>{{ form.figure }}</div>
+                <div class="w3-bar-item"><i class="fas fa-history w3-text-amber"></i> <b>{% trans 'Interval' %}</b><br>{{ form.date_range }}</div>
+                <div class="w3-bar-item"><i class="fas fa-wave-square w3-text-amber"></i> <b>{% trans 'Frequency' %}</b><br>{{ form.frequency }}</div>                  
+            </div>
+        </div>
+        <div class="w3-cell w3-cell-middle">
+            <div class="w3-bar">                 
+                <div class="w3-hide w3-right" id="loader"><i class="fa fa-spinner w3-spin" style="font-size:32px"></i></div>
+            </div>                        
+        </div>                  
+        <div class="w3-cell">
+            <div class="w3-bar">
+                <div class="w3-bar-item"><i class="fas fa-pen w3-text-amber"></i> <b>{% trans 'Line mode' %}:</b><br>{{ form.mode }}</div>
+                <div class="w3-bar-item"><i class="fas fa-chart-line w3-text-amber"></i> <b>{% trans 'Interpolation' %}:</b><br>{{ form.interpolation }}</div>  
+                <div class="w3-bar-item"><i class="fas fa-sync w3-text-amber"></i> <b>{% trans 'Refresh' %}</b><br>{{ form.refresh }}</div>                      
+            </div>
+        </div>
+     </div>
+     <div id="_plot_filter_click" class="_click-line"></div>  
+     <div id="plot-content"></div>  
+	 <script>
+	 $('#_plot_filter_click').click(function(e) { if( (e.offsetY)<=parseInt($(this).css('border-bottom-width'))) { $('#_plot_filter').toggle(); } });
+	 </script>    
+{% endif %} 

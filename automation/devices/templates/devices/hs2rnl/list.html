@@ -1,0 +1,9 @@
+{% extends "devices/device-list.html" %}
+{% load i18n boardtags %}
+{% block list_detail %}
+    <div class="w3-cell w3-cell-top w3-padding-small w3-mobile w3-w50">
+        <div>{% button_start_stop btn=device.uuid js='onClick="hs2rnlToggle($(this))"' %}</div>
+        <div><i class="fa-solid fa-signal w3-text-amber"></i> <span class="linkquality-{{ device.uuid }}"></span></div>
+    </div>
+    {% load_js_script "devices/hs2rnl/js.html" %}
+{% endblock %}

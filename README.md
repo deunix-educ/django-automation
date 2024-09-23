@@ -67,24 +67,24 @@ Here everything will be installed on the same machine, but it is not necessary.
         
     - mosquitto: Adapter /etc/mosquitto/mosquitto.conf 
 
-        sudo mosquitto_passwd -c /etc/mosquitto/conf.d/passwd automation 
+            sudo mosquitto_passwd -c /etc/mosquitto/conf.d/passwd automation 
         
     - zigbee2mqtt: Adapt the configuration file 
 
-        /home/automation/zigbee2mqtt/data/configuration.yaml 
+            /home/automation/zigbee2mqtt/data/configuration.yaml 
         
     - django-automation: Adapt etc/conf/automation_service.conf
 
-        sudo cp etc/conf/automation_service.conf /etc/supervisor/conf.d/
-        sudo supervisorctl reread
+            sudo cp etc/conf/automation_service.conf /etc/supervisor/conf.d/
+            sudo supervisorctl reread
 
     - Edit and Configure Environment Variables automation/.env-example
 
-        cp automation/.env-example automation/.env
+            cp automation/.env-example automation/.env
 
     - Create the python environment (.venv)
 
-        etc/bin/venv-install.sh etc/install/requirements.txt
+            etc/bin/venv-install.sh etc/install/requirements.txt
 
     - Test the application
 
@@ -93,7 +93,8 @@ Here everything will be installed on the same machine, but it is not necessary.
         ./manage.py migrate
         ./manage.py initapp
 
-        # examples
+         # examples
+
         ./manage.py loaddata ../etc/install/unit.json
         ./manage.py loaddata ../etc/install/automation.json
         ./manage.py loaddata../etc/install/django_celery_beat.json

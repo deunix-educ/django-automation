@@ -73,19 +73,24 @@ Ici tout sera installé sur la même machine, mais ce n'est pas nécessaire.
     Exemple de configuration dans etc/conf 
     
     - mosquitto: Adapter /etc/mosquitto/mosquitto.conf
+
         sudo mosquitto_passwd -c /etc/mosquitto/conf.d/passwd automation
         
     - zigbee2mqtt: Adapter le fichier de configuratio
+
         /home/automation/zigbee2mqtt/data/configuration.yaml
         
     - django-automation: Adapter etc/conf/automation_service.conf
+
         sudo cp etc/conf/automation_service.conf /etc/supervisor/conf.d/
         sudo supervisorctl reread
         
     - Editer et Configurer les variables d'environnement automation/.env-example
+
         cp automation/.env-example automation/.env
         
     - Créer l'environnement python (.venv)
+
         etc/bin/venv-install.sh etc/install/requirements.txt
         
 - Tester l'application
@@ -110,5 +115,4 @@ Ici tout sera installé sur la même machine, mais ce n'est pas nécessaire.
         # Accès django-automation
         http://ip-du-serveur
         
-
         

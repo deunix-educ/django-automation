@@ -33,7 +33,7 @@ Here everything will be installed on the same machine, but it is not necessary.
     - Ideal: Raspberry pi4 or pi5
     - Very good: Bananapi BPI-R3, but leaflet impossible to install
     
-- Download django-automation-master.zip [here](https://github.com/deunix-educ/django-automation)
+- Download django-automation-main.zip [here](https://github.com/deunix-educ/django-automation)
 
         tar xzfv django-automation-master.zip
         or

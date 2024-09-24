@@ -12,6 +12,8 @@ Home automation with Python Django
 - A zigbee2mqt coordinator guarantees the Zigbee connections to Mosquitto.
 - The django server and its workers provide the configuration services and the web interface.
 
+<img title="automation" alt="Alt text" src="etc/install/automation.png">
+
 #### OS and Machines used
 - Machines under Linux preferably, but it is not mandatory.
 - Gateway or [zigbee2mqtt coordinator](https://www.zigbee2mqtt.io/guide/adapters/)
@@ -31,7 +33,7 @@ Here everything will be installed on the same machine, but it is not necessary.
     - Ideal: Raspberry pi4 or pi5
     - Very good: Bananapi BPI-R3, but leaflet impossible to install
     
-- Download jango-automation-master.zip [here](https://github.com/deunix-educ/django-automation)
+- Download django-automation-master.zip [here](https://github.com/deunix-educ/django-automation)
 
         tar xzfv django-automation-master.zip
         or

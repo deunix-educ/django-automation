@@ -12,6 +12,8 @@ Domotique avec Python Django
 - Un coordinateur zigbee2mqt garantit les connexions Zigbee vers Mosquitto.
 - Le serveur django et ses workers fournissent quant à eux les services de paramétrage et l'interface web.
 
+<img title="automation" alt="Alt text" src="etc/install/automation.png">
+
 #### OS et Machines utilisées
 - Machines sous Linux de préférence, mais ce n'est pas obligatoire.
 - Passerelle ou [coordinateur zigbee2mqtt](https://www.zigbee2mqtt.io/guide/adapters/)
@@ -31,7 +33,7 @@ Ici tout sera installé sur la même machine, mais ce n'est pas nécessaire.
     - Idéal: Raspberry pi4 ou pi5
     - Très bon: Bananapi BPI-R3, mais leaflet impossible à installer
     
-- Télécharger jango-automation-master.zip [ici](https://github.com/deunix-educ/django-automation)
+- Télécharger jdango-automation-master.zip [ici](https://github.com/deunix-educ/django-automation)
 
         tar xzfv django-automation-master.zip
         ou

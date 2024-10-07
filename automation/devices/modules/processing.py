@@ -6,6 +6,7 @@ Created on 13 juil. 2024
 import logging, json
 from django.conf import settings
 from devices.modules.influxdb import InfluxdbBase
+from devices.modules.reductstore import ReductStoreBase
 from contrib import utils
 
 logging.basicConfig(level=logging.INFO)
@@ -29,6 +30,14 @@ class Influxdb(InfluxdbBase):
         )
         super().write(measurement=device.sensor, tags=tags, datas=datas)
 
+
+class ReductStore(ReductStoreBase):
+    token = settings.REDUCTSTORE_TOKEN
+    url = settings.REDUCTSTORE_URL
+
+    def __init__(self, bucket_name='sensor.name'):
+        super().__init__(bucket_name)
+        
 
 class Base(object):
 

@@ -68,7 +68,7 @@ urlpatterns += i18n_patterns(
     path('devices/', include('devices.urls')),
     path('reserves/', include('reserves.urls')),
     #path('users/', include('users.urls')),
-    path('rosetta/', include('rosetta.urls')), 
+    #path('rosetta/', include('rosetta.urls')), 
 )
 
 if settings.DEBUG:

@@ -17,6 +17,9 @@ echo "deb [signed-by=/usr/share/keyrings/influxdb-archive-keyring.gpg] https://r
 apt update
 apt -y install influxdb2
 
+# reductstore
+apt -y install libprotobuf-dev protobuf-compiler
+
 ## zigbee2mqtt
 curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
 apt -y install nodejs

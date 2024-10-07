@@ -65,7 +65,7 @@
                 //console.log(r);
             });
         }
-        mqttcInit();
+        mqttcInit("{% url 'mqtt_init' %}");
     </script>  
 {% endblock %}
 {% block js_footer %}

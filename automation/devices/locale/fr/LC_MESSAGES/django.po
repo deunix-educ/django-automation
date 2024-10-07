@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-13 10:40+0200\n"
+"POT-Creation-Date: 2024-10-06 09:18+0200\n"
 "PO-Revision-Date: 2024-09-04 09:25+0200\n"
 "Last-Translator: Denis  <denis.defolie@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -338,7 +338,7 @@ msgstr "Plage du sélecteur de rang"
 msgid "Plotly display range selector bar"
 msgstr "Plotly affiche la barre du sélecteur de rang"
 
-#: devices/models.py:41 devices/models.py:147 devices/models.py:276
+#: devices/models.py:41 devices/models.py:147 devices/models.py:291
 msgid "Active"
 msgstr "Actif"
 
@@ -577,7 +577,7 @@ msgid "Minimum height (px)"
 msgstr "Hauteur mini (px)"
 
 #: devices/models.py:201 devices/models.py:240 devices/models.py:261
-#: devices/models.py:273
+#: devices/models.py:287
 msgid "Device"
 msgstr "Appareil"
 
@@ -625,25 +625,41 @@ msgstr "Tâche périodique par appareil"
 msgid "Periodics tasks per device"
 msgstr "Tâches périodiques par appareil"
 
-#: devices/models.py:274
-msgid "Short description"
-msgstr "Courte description"
+#: devices/models.py:273
+msgid "Module name"
+msgstr "Nom du module"
 
-#: devices/models.py:275
+#: devices/models.py:273
+msgid "Python module name"
+msgstr "Nom du module python"
+
+#: devices/models.py:275 devices/models.py:290
 msgid "Module class"
 msgstr "Classe du module"
 
-#: devices/models.py:275
+#: devices/models.py:275 devices/models.py:290
 msgid "Python module class"
-msgstr "Classe du module en python"
+msgstr "Classe du module python"
+
+#: devices/models.py:276 devices/models.py:288
+msgid "Short description"
+msgstr "Courte description"
 
 #: devices/models.py:280
-msgid "Device processing module"
-msgstr "Modules de processus de périphérique"
+msgid "Device module"
+msgstr "Module de l'appareil"
 
 #: devices/models.py:281
+msgid "Device modules"
+msgstr "Modules des appareils"
+
+#: devices/models.py:295
+msgid "Device processing module"
+msgstr "Modules des processus de périphérique"
+
+#: devices/models.py:296
 msgid "Devices processing module"
-msgstr "Module de processus de périphérique"
+msgstr "Modules des processus de périphérique"
 
 #: devices/modules/plotlib.py:32
 msgid "d"
@@ -652,50 +668,6 @@ msgstr "j"
 #: devices/modules/plotlib.py:33
 msgid "All"
 msgstr "Tout"
-
-#: devices/modules/processing.py:167
-msgid "on"
-msgstr "I"
-
-#: devices/modules/processing.py:167
-msgid "off"
-msgstr "O"
-
-#: devices/tasks.py:30
-msgid "Device set recording on"
-msgstr "Démarrer l'enregistrement de l'appareil"
-
-#: devices/tasks.py:36
-msgid "Device set recording off"
-msgstr "Arrêt de l'enregistrement de l'appareil"
-
-#: devices/tasks.py:42
-msgid "Device switch on"
-msgstr "Ouvre interrupteur"
-
-#: devices/tasks.py:47
-msgid "Device switch off"
-msgstr "Ferme interrupteur"
-
-#: devices/tasks.py:52
-msgid "Device switch toggle"
-msgstr "Interrupteur bascule"
-
-#: devices/tasks.py:57
-msgid "Device relay switch close"
-msgstr "Relai ferme"
-
-#: devices/tasks.py:62
-msgid "Device relay switch open"
-msgstr "Relai ouvre"
-
-#: devices/tasks.py:67
-msgid "Device relay switch stop"
-msgstr "Relai stop"
-
-#: devices/tasks.py:72
-msgid "Device relay switch toggle"
-msgstr "Relai bascule"
 
 #: devices/templates/devices/camera-box.html:5
 #: devices/templates/devices/camera/replay/box-replay.html:6
@@ -840,3 +812,36 @@ msgstr "maxi"
 #: devices/templates/devices/solarmax/list.html:12
 msgid "this day"
 msgstr "ce jour"
+
+#~ msgid "on"
+#~ msgstr "I"
+
+#~ msgid "off"
+#~ msgstr "O"
+
+#~ msgid "Device set recording on"
+#~ msgstr "Démarrer l'enregistrement de l'appareil"
+
+#~ msgid "Device set recording off"
+#~ msgstr "Arrêt de l'enregistrement de l'appareil"
+
+#~ msgid "Device switch on"
+#~ msgstr "Ouvre interrupteur"
+
+#~ msgid "Device switch off"
+#~ msgstr "Ferme interrupteur"
+
+#~ msgid "Device switch toggle"
+#~ msgstr "Interrupteur bascule"
+
+#~ msgid "Device relay switch close"
+#~ msgstr "Relai ferme"
+
+#~ msgid "Device relay switch open"
+#~ msgstr "Relai ouvre"
+
+#~ msgid "Device relay switch stop"
+#~ msgstr "Relai stop"
+
+#~ msgid "Device relay switch toggle"
+#~ msgstr "Relai bascule"

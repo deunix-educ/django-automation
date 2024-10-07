@@ -68,7 +68,7 @@ INSTALLED_APPS = [
     'automation',
     'devices',
     'reserves',
-    'rosetta',
+    #'rosetta',
 ]
 
 IS_LEAFLET=False
@@ -101,7 +101,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'axes.middleware.AxesMiddleware',
-
 ]
 
 ROOT_URLCONF = 'automation.urls'
@@ -206,8 +205,6 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 #LANGUAGE_CODE = 'en-US'
-#LANGUAGE_CODE = 'fr-FR'
-
 LANGUAGE_CODE = config('LANGUAGE_CODE')
 
 LANGUAGES = (
@@ -229,6 +226,7 @@ LOCALE_PATHS = (
     BASE_DIR / 'users' / 'locale',
     BASE_DIR / 'devices' / 'locale',
     BASE_DIR / 'reserves' / 'locale',
+    BASE_DIR / 'photologue' / 'locale',
 )
 
 # Static files (CSS, JavaScript, Images)
@@ -498,6 +496,10 @@ INFLUXDB_ORG_ID = config('INFLUXDB_ORG_ID')
 INFLUXDB_ORG = config('INFLUXDB_ORG')
 INFLUXDB_URL = f"{config('INFLUXDB_HOST')}:{config('INFLUXDB_PORT')}"
 
+## reductstore
+#
+REDUCTSTORE_TOKEN = config('REDUCTSTORE_TOKEN')
+REDUCTSTORE_URL = config('REDUCTSTORE_URL')
 
 # app
 #

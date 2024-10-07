@@ -43,7 +43,8 @@
             if (args.lat != 'NaN' && args.lon != 'NaN') {
                 lat = toFloat(args.lat, 6)/1000000;
                 lon = toFloat(args.lon, 6)/1000000;
-                addTag(args.uuid, lat, lon);
+                if (typeof addTag === "function")
+                    addTag(args.uuid, lat, lon);
             }
             $("span.mlat-"+args.uuid).text(lat);
             $("span.mlon-"+args.uuid).text(lon);           

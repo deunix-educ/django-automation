@@ -7,7 +7,7 @@ django-axes[ipware]
 django-celery-beat
 django-celery-results
 django-leaflet
-django-rosetta
+#django-rosetta
 django-crispy-forms
 crispy-bulma
 ephem
@@ -20,7 +20,7 @@ pytz
 pyRFC3339
 paho-mqtt==1.6.1
 gunicorn
-#reduct-py
+reduct-py
 psycopg2
 mysqlclient
 influxdb-client[ciso]

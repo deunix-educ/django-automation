@@ -268,11 +268,25 @@ class PeriodicTaskDevice(models.Model):
         verbose_name = _("Periodic task per device")
         verbose_name_plural = _("Periodics tasks per device")
 
-  
+
+class ModuleClass(models.Model):
+    name = models.CharField(_("Module name"), help_text=_("Python module name"), max_length=100, null=True, blank=True,)
+    class_module = models.CharField(
+        _("Module class"), help_text=_("Python module class"), max_length=128, null=True, blank=True, default='devices.modules.processing.Base')
+    description = models.CharField(_("Short description"), max_length=128, null=True, blank=True)
+    
+    class Meta:
+        ordering = ['name']
+        verbose_name = _("Device module")
+        verbose_name_plural = _("Device modules")
+
+    def __str__(self):
+        return f'{self.name}'
+
+   
 class DeviceProcessing(models.Model):
     device = models.ForeignKey(Device, verbose_name=_("Device"), on_delete=models.CASCADE, null=True, blank=False)
-    description = models.CharField(_("Short description"), max_length=100, null=True, blank=True)
-    class_module = models.CharField(_("Module class"), help_text=_("Python module class"), max_length=128, null=True, blank=False, default='devices.modules.processing.Base')
+    module = models.ForeignKey(ModuleClass, verbose_name=_("Python module class"), on_delete=models.CASCADE, null=True, blank=False)
     active = models.BooleanField(_("Active"), default=True)
 
     class Meta:

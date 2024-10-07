@@ -28,8 +28,8 @@ class Processing:
     def registry(self):
         reg = {}
         for proc in DeviceProcessing.objects.filter(active=True).all():
-            links = DeviceLinked.objects.filter(device=proc.device).all()            
-            instance = utils.get_instance_class(proc.class_module)
+            links = DeviceLinked.objects.filter(device=proc.device).all()
+            instance = utils.get_instance_class(proc.module.class_module)
             reg[proc.device.uuid] = instance(self.parent, proc.device, links)
         return reg   
 

@@ -1,11 +1,14 @@
 #
 from django.utils.translation import gettext_lazy as _
 from django.contrib import admin
+from django.db import models
+from django import forms 
+
 
 from .models import (
     Device, TopicSubscription, PeriodicTaskDevice, 
     DeviceProcessing, DeviceLinked,
-    Plot, Fields, Unit,
+    Plot, Fields, Unit, ModuleClass
 )
   
     
@@ -35,6 +38,7 @@ class DeviceAdmin(admin.ModelAdmin):
     #list_filter = ("group", )
     list_display = ( 'uuid', '_image_tag', 'name', 'sensor', 'location', '_group', 'display', 'record', 'active')
     list_filter = ('location', 'group', 'sensor', 'active', )
+    
     def _group(self, instance):
         if instance.group:
             return instance.group.name
@@ -49,11 +53,23 @@ class DeviceAdmin(admin.ModelAdmin):
         if obj:
             return self.readonly_fields + ('org', 'uuid', 'basetopic', )
         return self.readonly_fields
-    
-    
-class DeviceProcessingAdmin(admin.ModelAdmin):
-    list_display = ('device', 'description', 'class_module', 'active')
 
+
+class ModuleClassAdmin(admin.ModelAdmin):
+    list_display = ('name', 'description', 'class_module')   
+    formfield_overrides = {
+        models.CharField: {'widget': forms.TextInput(attrs={'size':'64'})},
+    }
+
+
+class DeviceProcessingAdmin(admin.ModelAdmin):
+    list_display = ('device', 'mod_description', 'module', 'active')
+    
+    def mod_description(self, instance):
+        if instance.module:
+            return instance.module.description
+    mod_description.short_description = _("Description")
+    
 
 class UnitAdmin(admin.ModelAdmin):
     list_display = ('name', 'unit')
@@ -72,6 +88,7 @@ class FieldsAdmin(admin.ModelAdmin):
    
 admin.site.register(Device, DeviceAdmin)
 admin.site.register(DeviceProcessing, DeviceProcessingAdmin)
+admin.site.register(ModuleClass, ModuleClassAdmin)
 admin.site.register(Unit, UnitAdmin)
 admin.site.register(Plot, PlotAdmin)
 admin.site.register(Fields, FieldsAdmin)

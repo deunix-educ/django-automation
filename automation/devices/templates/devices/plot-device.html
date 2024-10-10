@@ -2,6 +2,10 @@
 {% load i18n %}
 {% block js_header %}
 	{{ block.super }}
+    <script src="/static/app/ajaxResources.js"></script>
+    <script>
+    ajax.Token("{{ csrf_token }}");
+    </script> 
 	<script src="/static/devices/plotly/plotly-cartesian.min.js"></script>
 	<script src="/static/devices/plotly/plotly-locale-fr.js"></script>   
 {% endblock %}

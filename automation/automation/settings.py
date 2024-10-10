@@ -505,5 +505,5 @@ REDUCTSTORE_URL = config('REDUCTSTORE_URL')
 #
 APP_TITLE = config("APP_TITLE")
 APP_SUB_TITLE = config("APP_SUB_TITLE")
-APP_MENU_TABS = range(2)
+APP_MENU_TABS = range(config('APP_MENU_TABS', cast=int))
 

@@ -5,6 +5,10 @@
     {{ block.super }}
     <script src="/static/js/mqttws31.js"></script>
     <script src="/static/js/base64.js"></script>
+    <script src="/static/app/ajaxResources.js"></script>
+    <script>
+    ajax.Token("{{ csrf_token }}");
+    </script>    
     <script src="/static/app/mqttclient.js"></script>
 {% endblock %}
 
@@ -25,7 +29,7 @@
 		    }
 		}
 		function controller(payload) {
-	        $.post("/controller/", {payload:payload} ).done(function(r) {
+	        ajax.Post("/controller/", {payload:payload} ).done(function(r) {
 	            //console.log(r);
 	        });
 		}

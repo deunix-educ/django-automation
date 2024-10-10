@@ -31,13 +31,6 @@ var QOS_AT_MOST_ONCE  = 0;
 var QOS_AT_LEAST_ONCE = 1;
 var QOS_EXACTLY_ONCE  = 2;
 
-function tsNow() {
-    return Math.floor(new Date().getTime()/1000);
-}
-
-function tsMsNow() {
-    return Math.floor(new Date().getTime());
-}
 
 var MqttClientClass = function MqttClient(options, callbacks) {
     let self = this;
@@ -153,22 +146,8 @@ var MqttClientClass = function MqttClient(options, callbacks) {
     this.deleteRetainedMessage = function(topic)                { MQTTdeleteRetainedMessage(topic); };
 };
 
-var dateOptions = {hourCycle:"h24",year:"2-digit",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit",};
-
-function to_localeDate(unixtimestamp, loc) {
-    var locale = (typeof loc === 'undefined') ?  'fr-FR': loc;
-    var date = new Date(parseInt(unixtimestamp));
-    return date.toLocaleDateString(locale, dateOptions);
-}
-
-function to_localeDateMillisecond(unixtimestamp, loc) {
-    var locale = (typeof loc === 'undefined') ?  'fr-FR': loc;
-    var date = new Date(1000*parseInt(unixtimestamp).toFixed(3));
-    return date.toLocaleDateString(locale, dateOptions);
-}
-
 function mqtt_init(url, onMessage, onConnection, onDisconnection) {
-    $.post(url).done(function(options) {
+    ajax.Post(url).done(function(options) {
         var mqttCli = new MqttClientClass(options, {
             onMessageCallback: onMessage,
             onConnectionCallback: onConnection,
@@ -177,4 +156,4 @@ function mqtt_init(url, onMessage, onConnection, onDisconnection) {
         mqttCli.connect();
     });
 }
-
+let mqttc = null;

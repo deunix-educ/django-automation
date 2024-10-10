@@ -201,7 +201,7 @@ def supervisor(request, pid=None):
     
 
 @login_required
-@csrf_exempt
+#@csrf_exempt
 def mqtt_init(request):
     if request.method == "POST":
         try:
@@ -216,7 +216,7 @@ def mqtt_init(request):
 
 
 @login_required
-@csrf_exempt
+#@csrf_exempt
 def mqtt_device(request):
     if request.method == "POST":
         try:
@@ -235,22 +235,7 @@ def mqtt_device(request):
 
 
 @login_required
-@csrf_exempt
-def mqtt_disconnect(request):
-    if request.method == "POST":
-        try:
-            response = dict(
-                status=True,
-
-            )
-            return JsonResponse(response)
-        except Exception as e:
-            logger.error(f"page_disconnect: {e}")
-    return JsonResponse({'status': False})
-
-
-@login_required
-@csrf_exempt
+#@csrf_exempt
 def mqtt_controller(request):
     if request.method == "POST":
         try:

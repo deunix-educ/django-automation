@@ -32,7 +32,6 @@ urlpatterns = [
     path('mqtt_controller/', views.mqtt_controller, name='mqtt_controller'),
     path('mqtt/init/', views.mqtt_init, name='mqtt_init'),
     path('mqtt/device/', views.mqtt_device, name='mqtt_device'),
-    path('mqtt/disconnect/', views.mqtt_disconnect, name='mqtt_disconnect'),  
 ]
 
 urlpatterns += i18n_patterns(
@@ -55,11 +54,6 @@ urlpatterns += i18n_patterns(
 
     path('locate/<str:page>/', views.device_by_location, name='device_by_location'),
     path('locate/<str:page>/<str:location>/', views.device_by_location, name='device_by_location'),
-
-    #path('mqtt_controller/', views.mqtt_controller, name='mqtt_controller'),
-    #path('mqtt/init/', views.mqtt_init, name='mqtt_init'),
-    #path('mqtt/device/', views.mqtt_device, name='mqtt_device'),
-    #path('mqtt/disconnect/', views.mqtt_disconnect, name='mqtt_disconnect'),
     
     path('supervisor/', views.supervisor, name='supervisor'),
     path('supervisor/<int:pid>/', views.supervisor, name='supervisor'),
@@ -68,7 +62,6 @@ urlpatterns += i18n_patterns(
     path('devices/', include('devices.urls')),
     path('reserves/', include('reserves.urls')),
     #path('users/', include('users.urls')),
-    #path('rosetta/', include('rosetta.urls')), 
 )
 
 if settings.DEBUG:

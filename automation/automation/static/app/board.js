@@ -1,11 +1,8 @@
 //
-let mqttc = null;
-
 
 function sendMqttMessage(uuid, msg, payload) {
     if (mqttc!=null) {
-        var p = JSON.stringify({uuid: uuid, msg: msg, payload: payload});
-        $.post("/mqtt/device/", p).done(function(r) {
+        ajax.Post("/mqtt/device/", {uuid: uuid, msg: msg, payload: payload} ).done(function(r) {
             mqttc.publishMessage(r.basetopic + msg, payload);          
             //console.log(r.basetopic + msg, payload);
         });
@@ -18,10 +15,6 @@ function uuidFromBtn(btn) {
 
 function typeFromBtn(btn) {
     return btn.attr('id').split('-')[2];
-}
-
-function deviceInfos(uuid) {
-    mqttc.publishMessage('zigbee2mqtt/bridge/request/device/interview', {id: uuid});
 }
 
 function setBtnOnOff(state, uuid) {
@@ -54,15 +47,8 @@ function topicToJson(topic) {
     return opt;
 }
 
-function mqtt_disconnected() {
-    $.post("/mqtt/disconnect/").done(function(r) {
-        //console.log(r.status);
-    });
-}
-
 function onDisconnectionCBAK(mqtt, response) {
     $('span.ws-status').removeClass('w3-text-green').addClass('w3-text-red');
-    mqtt_disconnected();
     mqttc = null;
 }
 
@@ -85,21 +71,18 @@ function onMessageCBAK(mqtt, msg)   {
         if (topic) {
             if (topic == "zigbee2mqtt/bridge/state")    { zigbee2mqttStatus(msg); return; }
             if (topic.startsWith("zigbee2mqtt/bridge")) { return; }
+            
             var args = topicToJson(topic);
             if (args.evt!==undefined && (args.evt.endsWith('jpg') || args.evt.endsWith('wav')) ) {
-                //console.log("onMessageCBAK-------------------", args);
                 onMessageController(mqtt, args, msg.payloadBytes);
             } else {              
                 onMessageController(mqtt, args, JSON.parse(msg.payloadString));
             }
         }
-    } catch(e) {
-        console.log(e);
-    }
+    } catch(e) {console.log(e);}
 }
 
 function mqttcInit(url) {
-    //mqtt_init("/mqtt/init/", onMessageCBAK, onConnectionCBAK, onDisconnectionCBAK);
     mqtt_init(url, onMessageCBAK, onConnectionCBAK, onDisconnectionCBAK);
 }
 

@@ -31,7 +31,7 @@
             } catch(e) { console.log("onMessageController-------------------", e);  }
         }
         function controller(payload) {
-            $.post("/controller/", {payload:payload} ).done(function(r) {
+            ajax.Post("/controller/", {payload:payload} ).done(function(r) {
                 //console.log(r);
             });
         }

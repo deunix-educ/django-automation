@@ -76,8 +76,8 @@
 {% block js_footer %}
 	{{ block.super }}
 	<script>
-	function _rem(url) { var id = lastString(url, '/'); $.post(url).done(function(r) {$("span.amount-" + id).html("<h1>"+r.amount+"</h1>"); });	}
-	function _add(url) { var id = lastString(url, '/'); $.post(url).done(function(r) {$("span.amount-" + id).html("<h1>"+r.amount+"</h1>"); });	}
+	function _rem(url) { var id = lastString(url, '/'); ajax.Post(url).done(function(r) {$("span.amount-" + id).html("<h1>"+r.amount+"</h1>"); });	}
+	function _add(url) { var id = lastString(url, '/'); ajax.Post(url).done(function(r) {$("span.amount-" + id).html("<h1>"+r.amount+"</h1>"); });	}
 	</script>
 {% endblock %}
 

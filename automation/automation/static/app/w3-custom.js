@@ -96,6 +96,14 @@ function to_localeDateMillisecond(unixtimestamp, loc) {
     return date.toLocaleDateString(locale, dateOptions);
 }
 
+function tsNow() {
+    return Math.floor(new Date().getTime()/1000);
+}
+
+function tsMsNow() {
+    return Math.floor(new Date().getTime());
+}
+
 
 function getUrlParameter(sParam) {
     var sPageURL = window.location.search.substring(1),

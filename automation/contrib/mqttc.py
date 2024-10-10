@@ -143,17 +143,18 @@ class MqttBase(object):
         except Exception as e:
             logger.error(f"\n    _on_message error {e}\n    {message.topic} {message.payload[:80]}")
 
-
     def connectMQTT(self):
         self.client.connect_async(self.host, self.port, self.keepalive)
-
+        
 
     def startMQTT(self):
         self.connectMQTT()
-        self.client.loop_forever()
+        #self.client.loop_forever()
+        self.client.loop_start()
 
 
     def stopMQTT(self):
         self._on_stop_mqtt()
+        self.client.loop_stop()
         self.client.disconnect()
 

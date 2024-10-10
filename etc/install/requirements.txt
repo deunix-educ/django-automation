@@ -7,7 +7,6 @@ django-axes[ipware]
 django-celery-beat
 django-celery-results
 django-leaflet
-#django-rosetta
 django-crispy-forms
 crispy-bulma
 ephem
@@ -18,7 +17,8 @@ requests
 pyyaml
 pytz
 pyRFC3339
-paho-mqtt==1.6.1
+#paho-mqtt==1.6.1
+paho-mqtt
 gunicorn
 reduct-py
 psycopg2
